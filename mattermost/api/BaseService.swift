@@ -8,8 +8,4 @@
 
 import Foundation
 
-class API {
-    static let shared = API()
-    
-    
-}
+class BaseService {}

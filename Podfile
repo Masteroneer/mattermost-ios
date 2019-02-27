@@ -13,4 +13,7 @@ target 'mattermost' do
   # DB
   pod 'RealmSwift'
 
+  # View
+  pod 'PinLayout'
+
 end

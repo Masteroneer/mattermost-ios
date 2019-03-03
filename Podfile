@@ -14,6 +14,6 @@ target 'mattermost' do
   pod 'RealmSwift'
 
   # View
-  pod 'PinLayout'
+  pod 'Texture'
 
 end

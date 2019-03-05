@@ -15,5 +15,6 @@ target 'mattermost' do
 
   # View
   pod 'Texture'
+  pod 'SnapKit'
 
 end

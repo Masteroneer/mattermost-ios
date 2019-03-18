@@ -8,9 +8,7 @@
 
 import Foundation
 
-protocol InputServerPresenterProtocol: BasePresenterProtocol {
+protocol InputServerPresenterProtocol: BasePresenterViewProtocol {
   func onDidEndEditingUrl(text: String)
   func onNextPressed()
 }
-
-protocol InputServerThemeProtocol: BaseThemeProtocol {}

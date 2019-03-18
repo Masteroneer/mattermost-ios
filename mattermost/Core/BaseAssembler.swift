@@ -8,26 +8,24 @@
 
 import Foundation
 
-typealias assemblerView = BaseViewProtocol & BaseViewPresenterProtocol & TransitionHandlerProtocol // TODO: Заменить. че то это супержестко получилось
-
 protocol BaseAssemblerProtocol {
-  var presenterAssembler: BasePresenterAssemblerProtocol.Type { get }
+  var presenterFactory: BasePresenterFactoryProtocol.Type { get }
   var theme: BaseThemeProtocol.Type { get }
-  var router: BasePresenterRouterProtocol.Type { get }
+  var router: BaseRouterProtocol.Type { get }
 }
 
 extension BaseAssemblerProtocol {
-  func assemble(with view: assemblerView, and inputParams: BaseInputParamsProtocol?) {
+  func assemble(with view: BaseViewProtocol, and inputParams: BaseInputParamsProtocol?) {
     // theme
     let themeInstance = theme.init()
     view.baseTheme = themeInstance
   
     // router
-    let routerInstance = (router as? BaseRouterProtocol.Type)!.init(view)
+    let routerInstance = router.init(view)
     
     // presenter
-    let presenterAssemblerInstance = presenterAssembler.init()
-    let presenterInstance = presenterAssemblerInstance.assemble(baseView: view, baseRouter: routerInstance, baseInputParams: inputParams)
+    let presenterFactoryInstance = presenterFactory.init()
+    let presenterInstance = presenterFactoryInstance.createPresenter(baseView: view, baseRouter: routerInstance, baseInputParams: inputParams)
     
     // view
     view.basePresenter = presenterInstance

@@ -31,7 +31,6 @@ PODS:
     - Realm (= 3.13.1)
   - SnapKit (4.2.0)
   - Starscream (3.0.6)
-  - SwiftWebSocket (2.7.0)
   - Texture (2.7):
     - Texture/PINRemoteImage (= 2.7)
   - Texture/Core (2.7)
@@ -46,7 +45,6 @@ DEPENDENCIES:
   - RealmSwift
   - SnapKit
   - Starscream
-  - SwiftWebSocket
   - Texture
 
 SPEC REPOS:
@@ -60,7 +58,6 @@ SPEC REPOS:
     - RealmSwift
     - SnapKit
     - Starscream
-    - SwiftWebSocket
     - Texture
 
 SPEC CHECKSUMS:
@@ -73,9 +70,8 @@ SPEC CHECKSUMS:
   RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
-  SwiftWebSocket: 612c9729fd503cb6b0b8b45390c788686dac306f
   Texture: 9d7e38965cf22ccd7cd9c249dd78b3f14e70ab6c
 
-PODFILE CHECKSUM: 2bb6e17d68769b4c9d2570fe0aa74b39ba87f0a6
+PODFILE CHECKSUM: 0664b55c460cc75820307b11416b234799d17838
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.1

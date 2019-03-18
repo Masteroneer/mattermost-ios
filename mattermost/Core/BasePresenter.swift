@@ -8,30 +8,30 @@
 
 import Foundation
 
-// Protocol to assemble presenter. need for assemble mvp, viper...
-protocol BasePresenterAssemblerProtocol {
+protocol BasePresenterFactoryProtocol {
   init()
-  func assemble(baseView: BaseViewPresenterProtocol, baseRouter: BasePresenterRouterProtocol, baseInputParams: BaseInputParamsProtocol?) -> BasePresenterProtocol
+  func createPresenter(baseView: BaseViewPresenterProtocol, baseRouter: BasePresenterRouterProtocol, baseInputParams: BaseInputParamsProtocol?) -> BasePresenterProtocol
 }
-
-// Protocol to interact presenter with view
-protocol BaseViewPresenterProtocol: class {}
 
 // Input params for module
 protocol BaseInputParamsProtocol {}
 
+protocol BasePresenterViewProtocol {}
 
-protocol BasePresenterProtocol: class {
-  init(baseView: BaseViewPresenterProtocol, inputParams: BaseInputParamsProtocol?)
+protocol BasePresenterProtocol: class, BasePresenterViewProtocol {
+  init(baseView: BaseViewPresenterProtocol, baseRouter: BasePresenterRouterProtocol, inputParams: BaseInputParamsProtocol?)
   func update(with inputParams: BaseInputParamsProtocol)
 }
 
-
+// Base implementation of presenter
 class BasePresenter: BasePresenterProtocol {
   internal weak var baseView: BaseViewPresenterProtocol?
   
-  required init(baseView: BaseViewPresenterProtocol, inputParams: BaseInputParamsProtocol?) {
+  internal var baseRouter: BasePresenterRouterProtocol
+  
+  required init(baseView: BaseViewPresenterProtocol, baseRouter: BasePresenterRouterProtocol, inputParams: BaseInputParamsProtocol?) {
     self.baseView = baseView
+    self.baseRouter = baseRouter
   }
   
   func update(with inputParams: BaseInputParamsProtocol) {}

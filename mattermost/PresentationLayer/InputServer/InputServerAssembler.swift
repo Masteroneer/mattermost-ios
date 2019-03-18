@@ -7,6 +7,7 @@
 //
 
 class InputServerAssembler: BaseAssemblerProtocol {
-  var presenterAssembler: BasePresenterAssemblerProtocol.Type { return InputServerPresenterAssembler.self }
+  var presenterFactory: BasePresenterFactoryProtocol.Type { return InputServerPresenterFactory.self }
   var theme: BaseThemeProtocol.Type { return InputServerTheme.self }
+  var router: BaseRouterProtocol.Type { return InputServerRouter.self }
 }

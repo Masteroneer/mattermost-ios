@@ -12,13 +12,14 @@ import Foundation
 protocol BasePresenterRouterProtocol {}
 
 protocol BaseRouterProtocol: BasePresenterRouterProtocol {
+  // view with TransitionHandlerProtocol
   init(_ view: TransitionHandlerProtocol)
 }
 
 class BaseRouter: BaseRouterProtocol {
-  internal var handlerTransition: TransitionHandlerProtocol
+  internal var transitionHandler: TransitionHandlerProtocol
   
-  required init(_ handlerTransition: TransitionHandlerProtocol) {
-    self.handlerTransition = handlerTransition
+  required init(_ transitionHandler: TransitionHandlerProtocol) {
+    self.transitionHandler = transitionHandler
   }
 }

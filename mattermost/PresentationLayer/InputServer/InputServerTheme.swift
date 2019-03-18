@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+protocol InputServerThemeProtocol: BaseThemeProtocol {}
+
 final class InputServerTheme: InputServerThemeProtocol {
   var backgroundColor: UIColor { return UIColor.white }
 }

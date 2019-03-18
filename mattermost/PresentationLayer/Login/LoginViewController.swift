@@ -9,14 +9,25 @@
 import Foundation
 import UIKit
 
-class LoginViewController: UIViewController {
-  @IBAction func onDidEndEditingUsername(_ sender: Any) {
+final class LoginViewController: BaseViewController {
+  
+  private var presenter: LoginPresenterProtocol? { return basePresenter as? LoginPresenterProtocol }
+  
+  @IBAction func emailEditingChanged(_ sender: Any) {
+    guard let emailTextField = sender as? UITextField,
+      let email = emailTextField.text else { return }
     
+    presenter?.onChange(email: email)
   }
-  @IBAction func onDidEndEditingPassword(_ sender: Any) {
+  
+  @IBAction func passwordEditingChanged(_ sender: Any) {
+    guard let passwordTextField = sender as? UITextField,
+      let password = passwordTextField.text else { return }
     
+    presenter?.onChange(password: password)
   }
   
   @IBAction func onLoginPressed(_ sender: Any) {
+    presenter?.onPressLogin()
   }
 }

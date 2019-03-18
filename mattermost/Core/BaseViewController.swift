@@ -9,8 +9,9 @@
 import Foundation
 import UIKit
 
-class BaseViewController: UIViewController, BaseViewProtocol, BaseViewPresenterProtocol {
-  var basePresenter: BasePresenterProtocol?
+class BaseViewController: UIViewController, BaseViewProtocol {
+  var basePresenter: BasePresenterViewProtocol?
+  
   var baseTheme: BaseThemeProtocol?
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {

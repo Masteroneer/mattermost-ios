@@ -15,9 +15,10 @@ protocol BaseThemeProtocol {
   init()
 }
 
-
-// TODO: Нужен ли он?
-protocol BaseViewProtocol: class {
-  var basePresenter: BasePresenterProtocol? { get set }
+protocol BaseViewProtocol: BaseViewPresenterProtocol, TransitionHandlerProtocol {
+  var basePresenter: BasePresenterViewProtocol? { get set }
   var baseTheme: BaseThemeProtocol? { get set }
 }
+
+// Protocol to interact presenter with view
+protocol BaseViewPresenterProtocol: class {}

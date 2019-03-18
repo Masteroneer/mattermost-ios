@@ -8,7 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		6D84A9D4584D7B849E2324A0 /* Pods_mattermost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A28DF2302C186CA30FDB9013 /* Pods_mattermost.framework */; };
-		9860B81E223F6C0300132666 /* InputServerPresenterAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9860B81D223F6C0300132666 /* InputServerPresenterAssembler.swift */; };
+		980064C2223FE80E0001B4DC /* InputServerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980064C1223FE80E0001B4DC /* InputServerRouter.swift */; };
+		980064CA223FEC240001B4DC /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980064C9223FEC240001B4DC /* LoginPresenter.swift */; };
+		980064CC223FEC320001B4DC /* LoginPresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980064CB223FEC320001B4DC /* LoginPresenterFactory.swift */; };
+		980064CE223FEC980001B4DC /* LoginAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980064CD223FEC980001B4DC /* LoginAssembler.swift */; };
+		980064D0223FECF00001B4DC /* LoginTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980064CF223FECF00001B4DC /* LoginTheme.swift */; };
+		980064D2223FED340001B4DC /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980064D1223FED340001B4DC /* LoginRouter.swift */; };
+		980064D4223FED940001B4DC /* LoginPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980064D3223FED940001B4DC /* LoginPresenterProtocol.swift */; };
+		9860B81E223F6C0300132666 /* InputServerPresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9860B81D223F6C0300132666 /* InputServerPresenterFactory.swift */; };
 		9860B820223F726C00132666 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9860B81F223F726C00132666 /* BaseViewController.swift */; };
 		9860B822223F858400132666 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9860B821223F858400132666 /* BaseRouter.swift */; };
 		9860B825223F8FA900132666 /* UIViewController+TransitionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9860B824223F8FA900132666 /* UIViewController+TransitionHandler.swift */; };
@@ -16,7 +23,7 @@
 		98B51AA7223B7886003325FA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B51AA6223B7886003325FA /* User.swift */; };
 		98B51AAA223B7A7E003325FA /* InputServerAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B51AA9223B7A7E003325FA /* InputServerAssembler.swift */; };
 		98B51AAF223B7AD2003325FA /* InputServerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B51AAE223B7AD2003325FA /* InputServerPresenter.swift */; };
-		98B51AB1223B7B06003325FA /* InputServerContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B51AB0223B7B06003325FA /* InputServerContract.swift */; };
+		98B51AB1223B7B06003325FA /* InputServerPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B51AB0223B7B06003325FA /* InputServerPresenterProtocol.swift */; };
 		98B51AB4223B7F18003325FA /* BaseAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B51AB3223B7F18003325FA /* BaseAssembler.swift */; };
 		98B51AB6223B7F47003325FA /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B51AB5223B7F47003325FA /* BaseView.swift */; };
 		98B51AB8223B7F51003325FA /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B51AB7223B7F51003325FA /* BasePresenter.swift */; };
@@ -36,7 +43,14 @@
 
 /* Begin PBXFileReference section */
 		3EE839562CBCE48AEC0431C1 /* Pods-mattermost.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mattermost.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mattermost/Pods-mattermost.debug.xcconfig"; sourceTree = "<group>"; };
-		9860B81D223F6C0300132666 /* InputServerPresenterAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputServerPresenterAssembler.swift; sourceTree = "<group>"; };
+		980064C1223FE80E0001B4DC /* InputServerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputServerRouter.swift; sourceTree = "<group>"; };
+		980064C9223FEC240001B4DC /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		980064CB223FEC320001B4DC /* LoginPresenterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterFactory.swift; sourceTree = "<group>"; };
+		980064CD223FEC980001B4DC /* LoginAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembler.swift; sourceTree = "<group>"; };
+		980064CF223FECF00001B4DC /* LoginTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTheme.swift; sourceTree = "<group>"; };
+		980064D1223FED340001B4DC /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		980064D3223FED940001B4DC /* LoginPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterProtocol.swift; sourceTree = "<group>"; };
+		9860B81D223F6C0300132666 /* InputServerPresenterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputServerPresenterFactory.swift; sourceTree = "<group>"; };
 		9860B81F223F726C00132666 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		9860B821223F858400132666 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
 		9860B824223F8FA900132666 /* UIViewController+TransitionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+TransitionHandler.swift"; sourceTree = "<group>"; };
@@ -44,7 +58,7 @@
 		98B51AA6223B7886003325FA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		98B51AA9223B7A7E003325FA /* InputServerAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputServerAssembler.swift; sourceTree = "<group>"; };
 		98B51AAE223B7AD2003325FA /* InputServerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputServerPresenter.swift; sourceTree = "<group>"; };
-		98B51AB0223B7B06003325FA /* InputServerContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputServerContract.swift; sourceTree = "<group>"; };
+		98B51AB0223B7B06003325FA /* InputServerPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputServerPresenterProtocol.swift; sourceTree = "<group>"; };
 		98B51AB3223B7F18003325FA /* BaseAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAssembler.swift; sourceTree = "<group>"; };
 		98B51AB5223B7F47003325FA /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		98B51AB7223B7F51003325FA /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
@@ -84,6 +98,15 @@
 				A28DF2302C186CA30FDB9013 /* Pods_mattermost.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		980064C8223FEC150001B4DC /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				980064C9223FEC240001B4DC /* LoginPresenter.swift */,
+				980064CB223FEC320001B4DC /* LoginPresenterFactory.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		9860B823223F8F6000132666 /* TransitionHandler */ = {
@@ -131,6 +154,7 @@
 		98B51AAC223B7AAE003325FA /* mvp */ = {
 			isa = PBXGroup;
 			children = (
+				980064C8223FEC150001B4DC /* Login */,
 				98B51AAD223B7AB8003325FA /* InputServer */,
 			);
 			path = mvp;
@@ -140,7 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				98B51AAE223B7AD2003325FA /* InputServerPresenter.swift */,
-				9860B81D223F6C0300132666 /* InputServerPresenterAssembler.swift */,
+				9860B81D223F6C0300132666 /* InputServerPresenterFactory.swift */,
 			);
 			path = InputServer;
 			sourceTree = "<group>";
@@ -160,8 +184,9 @@
 				98D20C7422378F5D0093E094 /* InputServerViewController.swift */,
 				98FB42052238D22D00569143 /* InputServerViewController.xib */,
 				98B51AA9223B7A7E003325FA /* InputServerAssembler.swift */,
-				98B51AB0223B7B06003325FA /* InputServerContract.swift */,
+				98B51AB0223B7B06003325FA /* InputServerPresenterProtocol.swift */,
 				98B51ABB223BA72A003325FA /* InputServerTheme.swift */,
+				980064C1223FE80E0001B4DC /* InputServerRouter.swift */,
 			);
 			path = InputServer;
 			sourceTree = "<group>";
@@ -218,6 +243,10 @@
 			children = (
 				98FB420C2238DDD600569143 /* LoginViewController.swift */,
 				98FB420E2238DDE600569143 /* LoginViewController.xib */,
+				980064CD223FEC980001B4DC /* LoginAssembler.swift */,
+				980064CF223FECF00001B4DC /* LoginTheme.swift */,
+				980064D1223FED340001B4DC /* LoginRouter.swift */,
+				980064D3223FED940001B4DC /* LoginPresenterProtocol.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -335,7 +364,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-mattermost/Pods-mattermost-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-mattermost/Pods-mattermost-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
 				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
@@ -345,7 +374,6 @@
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftWebSocket/SwiftWebSocket.framework",
 				"${BUILT_PRODUCTS_DIR}/Texture/AsyncDisplayKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -359,12 +387,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftWebSocket.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AsyncDisplayKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mattermost/Pods-mattermost-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mattermost/Pods-mattermost-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -376,10 +403,13 @@
 			files = (
 				98FB420D2238DDD600569143 /* LoginViewController.swift in Sources */,
 				9860B825223F8FA900132666 /* UIViewController+TransitionHandler.swift in Sources */,
+				980064D0223FECF00001B4DC /* LoginTheme.swift in Sources */,
 				98B51AB8223B7F51003325FA /* BasePresenter.swift in Sources */,
+				980064D4223FED940001B4DC /* LoginPresenterProtocol.swift in Sources */,
 				9860B827223F8FB700132666 /* TransitionHandler.swift in Sources */,
+				980064CA223FEC240001B4DC /* LoginPresenter.swift in Sources */,
 				98B51AB6223B7F47003325FA /* BaseView.swift in Sources */,
-				9860B81E223F6C0300132666 /* InputServerPresenterAssembler.swift in Sources */,
+				9860B81E223F6C0300132666 /* InputServerPresenterFactory.swift in Sources */,
 				9860B822223F858400132666 /* BaseRouter.swift in Sources */,
 				98D20C7522378F5D0093E094 /* InputServerViewController.swift in Sources */,
 				98B51ABC223BA72A003325FA /* InputServerTheme.swift in Sources */,
@@ -387,12 +417,16 @@
 				9860B820223F726C00132666 /* BaseViewController.swift in Sources */,
 				DDC2645322241F2400513411 /* UsersService.swift in Sources */,
 				98FB42112238E6E300569143 /* WebSocketService.swift in Sources */,
+				980064CE223FEC980001B4DC /* LoginAssembler.swift in Sources */,
 				98B51AA7223B7886003325FA /* User.swift in Sources */,
 				98FB420A2238D7C900569143 /* ServerUrlsService.swift in Sources */,
+				980064CC223FEC320001B4DC /* LoginPresenterFactory.swift in Sources */,
 				98B51AAA223B7A7E003325FA /* InputServerAssembler.swift in Sources */,
 				DDDC531C22158BCF0032A9A3 /* BaseService.swift in Sources */,
-				98B51AB1223B7B06003325FA /* InputServerContract.swift in Sources */,
+				98B51AB1223B7B06003325FA /* InputServerPresenterProtocol.swift in Sources */,
 				98E8E660221553E700F13355 /* AppDelegate.swift in Sources */,
+				980064C2223FE80E0001B4DC /* InputServerRouter.swift in Sources */,
+				980064D2223FED340001B4DC /* LoginRouter.swift in Sources */,
 				98B51AB4223B7F18003325FA /* BaseAssembler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,5 +7,28 @@
 //
 
 import Foundation
+import Alamofire
 
-class BaseService {}
+class BaseService {
+  internal var baseUrl: String
+  
+  internal var prefix: String {
+    get { fatalError("Must be implemented") }
+  }
+  
+  init(baseUrl: String) {
+    self.baseUrl = baseUrl
+  }
+  
+  // methodPrefix is a backend server method not a HTTPMethod
+  internal func makeRequest(methodPrefix: String, method: HTTPMethod, parameters: Parameters?, headers: HTTPHeaders?) -> DataRequest {
+    return Alamofire.request("\(getUrlWithPrefix())/\(methodPrefix)",
+                              method: method,
+                              parameters: parameters,
+                              headers: headers)
+  }
+  
+  internal func getUrlWithPrefix() -> String {
+    return "\(baseUrl)/\(prefix)"
+  }
+}

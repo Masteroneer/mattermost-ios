@@ -8,31 +8,61 @@
 
 /* Begin PBXBuildFile section */
 		6D84A9D4584D7B849E2324A0 /* Pods_mattermost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A28DF2302C186CA30FDB9013 /* Pods_mattermost.framework */; };
+		9860B81E223F6C0300132666 /* InputServerPresenterAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9860B81D223F6C0300132666 /* InputServerPresenterAssembler.swift */; };
+		9860B820223F726C00132666 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9860B81F223F726C00132666 /* BaseViewController.swift */; };
+		9860B822223F858400132666 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9860B821223F858400132666 /* BaseRouter.swift */; };
+		9860B825223F8FA900132666 /* UIViewController+TransitionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9860B824223F8FA900132666 /* UIViewController+TransitionHandler.swift */; };
+		9860B827223F8FB700132666 /* TransitionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9860B826223F8FB700132666 /* TransitionHandler.swift */; };
+		98B51AA7223B7886003325FA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B51AA6223B7886003325FA /* User.swift */; };
+		98B51AAA223B7A7E003325FA /* InputServerAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B51AA9223B7A7E003325FA /* InputServerAssembler.swift */; };
+		98B51AAF223B7AD2003325FA /* InputServerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B51AAE223B7AD2003325FA /* InputServerPresenter.swift */; };
+		98B51AB1223B7B06003325FA /* InputServerContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B51AB0223B7B06003325FA /* InputServerContract.swift */; };
+		98B51AB4223B7F18003325FA /* BaseAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B51AB3223B7F18003325FA /* BaseAssembler.swift */; };
+		98B51AB6223B7F47003325FA /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B51AB5223B7F47003325FA /* BaseView.swift */; };
+		98B51AB8223B7F51003325FA /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B51AB7223B7F51003325FA /* BasePresenter.swift */; };
+		98B51ABC223BA72A003325FA /* InputServerTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B51ABB223BA72A003325FA /* InputServerTheme.swift */; };
+		98D20C7522378F5D0093E094 /* InputServerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D20C7422378F5D0093E094 /* InputServerViewController.swift */; };
 		98E8E660221553E700F13355 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E8E65F221553E700F13355 /* AppDelegate.swift */; };
-		98E8E662221553E700F13355 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E8E661221553E700F13355 /* ViewController.swift */; };
-		98E8E665221553E700F13355 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98E8E663221553E700F13355 /* Main.storyboard */; };
 		98E8E667221553EA00F13355 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98E8E666221553EA00F13355 /* Assets.xcassets */; };
 		98E8E66A221553EA00F13355 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98E8E668221553EA00F13355 /* LaunchScreen.storyboard */; };
+		98FB42062238D22D00569143 /* InputServerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98FB42052238D22D00569143 /* InputServerViewController.xib */; };
+		98FB420A2238D7C900569143 /* ServerUrlsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FB42092238D7C900569143 /* ServerUrlsService.swift */; };
+		98FB420D2238DDD600569143 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FB420C2238DDD600569143 /* LoginViewController.swift */; };
+		98FB420F2238DDE600569143 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98FB420E2238DDE600569143 /* LoginViewController.xib */; };
+		98FB42112238E6E300569143 /* WebSocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FB42102238E6E300569143 /* WebSocketService.swift */; };
 		DDC2645322241F2400513411 /* UsersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC2645222241F2400513411 /* UsersService.swift */; };
-		DDC264572224654400513411 /* ScrollableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC264562224654400513411 /* ScrollableViewController.swift */; };
-		DDC2645A2224657D00513411 /* ScrollableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDC264592224657D00513411 /* ScrollableViewController.xib */; };
 		DDDC531C22158BCF0032A9A3 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDC531B22158BCF0032A9A3 /* BaseService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3EE839562CBCE48AEC0431C1 /* Pods-mattermost.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mattermost.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mattermost/Pods-mattermost.debug.xcconfig"; sourceTree = "<group>"; };
+		9860B81D223F6C0300132666 /* InputServerPresenterAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputServerPresenterAssembler.swift; sourceTree = "<group>"; };
+		9860B81F223F726C00132666 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		9860B821223F858400132666 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		9860B824223F8FA900132666 /* UIViewController+TransitionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+TransitionHandler.swift"; sourceTree = "<group>"; };
+		9860B826223F8FB700132666 /* TransitionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionHandler.swift; sourceTree = "<group>"; };
+		98B51AA6223B7886003325FA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		98B51AA9223B7A7E003325FA /* InputServerAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputServerAssembler.swift; sourceTree = "<group>"; };
+		98B51AAE223B7AD2003325FA /* InputServerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputServerPresenter.swift; sourceTree = "<group>"; };
+		98B51AB0223B7B06003325FA /* InputServerContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputServerContract.swift; sourceTree = "<group>"; };
+		98B51AB3223B7F18003325FA /* BaseAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAssembler.swift; sourceTree = "<group>"; };
+		98B51AB5223B7F47003325FA /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		98B51AB7223B7F51003325FA /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
+		98B51ABB223BA72A003325FA /* InputServerTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputServerTheme.swift; sourceTree = "<group>"; };
+		98D20C7422378F5D0093E094 /* InputServerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputServerViewController.swift; sourceTree = "<group>"; };
 		98E8E65C221553E700F13355 /* mattermost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mattermost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98E8E65F221553E700F13355 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		98E8E661221553E700F13355 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		98E8E664221553E700F13355 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		98E8E666221553EA00F13355 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98E8E669221553EA00F13355 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		98E8E66B221553EA00F13355 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98FB42052238D22D00569143 /* InputServerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputServerViewController.xib; sourceTree = "<group>"; };
+		98FB42092238D7C900569143 /* ServerUrlsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerUrlsService.swift; sourceTree = "<group>"; };
+		98FB420C2238DDD600569143 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		98FB420E2238DDE600569143 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		98FB42102238E6E300569143 /* WebSocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketService.swift; sourceTree = "<group>"; };
 		A28DF2302C186CA30FDB9013 /* Pods_mattermost.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mattermost.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAF125BC5342248BDCA1E630 /* Pods-mattermost.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mattermost.release.xcconfig"; path = "Pods/Target Support Files/Pods-mattermost/Pods-mattermost.release.xcconfig"; sourceTree = "<group>"; };
 		DDC2645222241F2400513411 /* UsersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersService.swift; sourceTree = "<group>"; };
-		DDC264562224654400513411 /* ScrollableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableViewController.swift; sourceTree = "<group>"; };
-		DDC264592224657D00513411 /* ScrollableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollableViewController.xib; sourceTree = "<group>"; };
 		DDDC531B22158BCF0032A9A3 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,6 +86,86 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9860B823223F8F6000132666 /* TransitionHandler */ = {
+			isa = PBXGroup;
+			children = (
+				9860B824223F8FA900132666 /* UIViewController+TransitionHandler.swift */,
+				9860B826223F8FB700132666 /* TransitionHandler.swift */,
+			);
+			path = TransitionHandler;
+			sourceTree = "<group>";
+		};
+		98B51AA4223B7766003325FA /* models */ = {
+			isa = PBXGroup;
+			children = (
+				98B51AA6223B7886003325FA /* User.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		98B51AA5223B776C003325FA /* services */ = {
+			isa = PBXGroup;
+			children = (
+				DDC2645222241F2400513411 /* UsersService.swift */,
+				98FB42102238E6E300569143 /* WebSocketService.swift */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		98B51AA8223B794F003325FA /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				98FB42092238D7C900569143 /* ServerUrlsService.swift */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
+		98B51AAB223B7A9C003325FA /* BussinesLogic */ = {
+			isa = PBXGroup;
+			children = (
+				98B51AAC223B7AAE003325FA /* mvp */,
+			);
+			path = BussinesLogic;
+			sourceTree = "<group>";
+		};
+		98B51AAC223B7AAE003325FA /* mvp */ = {
+			isa = PBXGroup;
+			children = (
+				98B51AAD223B7AB8003325FA /* InputServer */,
+			);
+			path = mvp;
+			sourceTree = "<group>";
+		};
+		98B51AAD223B7AB8003325FA /* InputServer */ = {
+			isa = PBXGroup;
+			children = (
+				98B51AAE223B7AD2003325FA /* InputServerPresenter.swift */,
+				9860B81D223F6C0300132666 /* InputServerPresenterAssembler.swift */,
+			);
+			path = InputServer;
+			sourceTree = "<group>";
+		};
+		98D20C7222378F1B0093E094 /* PresentationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				98FB420B2238DDC700569143 /* Login */,
+				98D20C7322378F450093E094 /* InputServer */,
+			);
+			path = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		98D20C7322378F450093E094 /* InputServer */ = {
+			isa = PBXGroup;
+			children = (
+				98D20C7422378F5D0093E094 /* InputServerViewController.swift */,
+				98FB42052238D22D00569143 /* InputServerViewController.xib */,
+				98B51AA9223B7A7E003325FA /* InputServerAssembler.swift */,
+				98B51AB0223B7B06003325FA /* InputServerContract.swift */,
+				98B51ABB223BA72A003325FA /* InputServerTheme.swift */,
+			);
+			path = InputServer;
+			sourceTree = "<group>";
+		};
 		98E8E653221553E700F13355 = {
 			isa = PBXGroup;
 			children = (
@@ -77,16 +187,39 @@
 		98E8E65E221553E700F13355 /* mattermost */ = {
 			isa = PBXGroup;
 			children = (
-				DDC2645422243A0300513411 /* views */,
+				98B51AAB223B7A9C003325FA /* BussinesLogic */,
+				98FB42072238D73E00569143 /* Core */,
+				98D20C7222378F1B0093E094 /* PresentationLayer */,
+				98B51AA8223B794F003325FA /* DB */,
 				DDDC531A22158BBF0032A9A3 /* api */,
 				98E8E65F221553E700F13355 /* AppDelegate.swift */,
-				98E8E661221553E700F13355 /* ViewController.swift */,
-				98E8E663221553E700F13355 /* Main.storyboard */,
 				98E8E666221553EA00F13355 /* Assets.xcassets */,
 				98E8E668221553EA00F13355 /* LaunchScreen.storyboard */,
 				98E8E66B221553EA00F13355 /* Info.plist */,
 			);
 			path = mattermost;
+			sourceTree = "<group>";
+		};
+		98FB42072238D73E00569143 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				9860B823223F8F6000132666 /* TransitionHandler */,
+				98B51AB3223B7F18003325FA /* BaseAssembler.swift */,
+				98B51AB5223B7F47003325FA /* BaseView.swift */,
+				98B51AB7223B7F51003325FA /* BasePresenter.swift */,
+				9860B81F223F726C00132666 /* BaseViewController.swift */,
+				9860B821223F858400132666 /* BaseRouter.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		98FB420B2238DDC700569143 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				98FB420C2238DDD600569143 /* LoginViewController.swift */,
+				98FB420E2238DDE600569143 /* LoginViewController.xib */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		C1D263C629006DF45E58F952 /* Pods */ = {
@@ -98,36 +231,12 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		DDC2645422243A0300513411 /* views */ = {
-			isa = PBXGroup;
-			children = (
-				DDC264552224651D00513411 /* base */,
-			);
-			path = views;
-			sourceTree = "<group>";
-		};
-		DDC264552224651D00513411 /* base */ = {
-			isa = PBXGroup;
-			children = (
-				DDC264582224655A00513411 /* ScrollableViewController */,
-			);
-			path = base;
-			sourceTree = "<group>";
-		};
-		DDC264582224655A00513411 /* ScrollableViewController */ = {
-			isa = PBXGroup;
-			children = (
-				DDC264562224654400513411 /* ScrollableViewController.swift */,
-				DDC264592224657D00513411 /* ScrollableViewController.xib */,
-			);
-			path = ScrollableViewController;
-			sourceTree = "<group>";
-		};
 		DDDC531A22158BBF0032A9A3 /* api */ = {
 			isa = PBXGroup;
 			children = (
+				98B51AA5223B776C003325FA /* services */,
+				98B51AA4223B7766003325FA /* models */,
 				DDDC531B22158BCF0032A9A3 /* BaseService.swift */,
-				DDC2645222241F2400513411 /* UsersService.swift */,
 			);
 			path = api;
 			sourceTree = "<group>";
@@ -192,10 +301,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98FB420F2238DDE600569143 /* LoginViewController.xib in Resources */,
+				98FB42062238D22D00569143 /* InputServerViewController.xib in Resources */,
 				98E8E66A221553EA00F13355 /* LaunchScreen.storyboard in Resources */,
 				98E8E667221553EA00F13355 /* Assets.xcassets in Resources */,
-				98E8E665221553E700F13355 /* Main.storyboard in Resources */,
-				DDC2645A2224657D00513411 /* ScrollableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,24 +335,36 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-mattermost/Pods-mattermost-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-mattermost/Pods-mattermost-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
+				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
+				"${BUILT_PRODUCTS_DIR}/PINRemoteImage/PINRemoteImage.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftWebSocket/SwiftWebSocket.framework",
+				"${BUILT_PRODUCTS_DIR}/Texture/AsyncDisplayKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINRemoteImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftWebSocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AsyncDisplayKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mattermost/Pods-mattermost-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mattermost/Pods-mattermost-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -253,25 +374,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98FB420D2238DDD600569143 /* LoginViewController.swift in Sources */,
+				9860B825223F8FA900132666 /* UIViewController+TransitionHandler.swift in Sources */,
+				98B51AB8223B7F51003325FA /* BasePresenter.swift in Sources */,
+				9860B827223F8FB700132666 /* TransitionHandler.swift in Sources */,
+				98B51AB6223B7F47003325FA /* BaseView.swift in Sources */,
+				9860B81E223F6C0300132666 /* InputServerPresenterAssembler.swift in Sources */,
+				9860B822223F858400132666 /* BaseRouter.swift in Sources */,
+				98D20C7522378F5D0093E094 /* InputServerViewController.swift in Sources */,
+				98B51ABC223BA72A003325FA /* InputServerTheme.swift in Sources */,
+				98B51AAF223B7AD2003325FA /* InputServerPresenter.swift in Sources */,
+				9860B820223F726C00132666 /* BaseViewController.swift in Sources */,
 				DDC2645322241F2400513411 /* UsersService.swift in Sources */,
-				DDC264572224654400513411 /* ScrollableViewController.swift in Sources */,
-				98E8E662221553E700F13355 /* ViewController.swift in Sources */,
+				98FB42112238E6E300569143 /* WebSocketService.swift in Sources */,
+				98B51AA7223B7886003325FA /* User.swift in Sources */,
+				98FB420A2238D7C900569143 /* ServerUrlsService.swift in Sources */,
+				98B51AAA223B7A7E003325FA /* InputServerAssembler.swift in Sources */,
 				DDDC531C22158BCF0032A9A3 /* BaseService.swift in Sources */,
+				98B51AB1223B7B06003325FA /* InputServerContract.swift in Sources */,
 				98E8E660221553E700F13355 /* AppDelegate.swift in Sources */,
+				98B51AB4223B7F18003325FA /* BaseAssembler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		98E8E663221553E700F13355 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				98E8E664221553E700F13355 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		98E8E668221553EA00F13355 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

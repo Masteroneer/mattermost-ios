@@ -1,0 +1,81 @@
+PODS:
+  - Alamofire (4.8.1)
+  - PINCache (3.0.1-beta.6):
+    - PINCache/Arc-exception-safe (= 3.0.1-beta.6)
+    - PINCache/Core (= 3.0.1-beta.6)
+  - PINCache/Arc-exception-safe (3.0.1-beta.6):
+    - PINCache/Core
+  - PINCache/Core (3.0.1-beta.6):
+    - PINOperation (~> 1.1.0)
+  - PINOperation (1.1.1)
+  - PINRemoteImage/Core (3.0.0-beta.13):
+    - PINOperation
+  - PINRemoteImage/iOS (3.0.0-beta.13):
+    - PINRemoteImage/Core
+  - PINRemoteImage/PINCache (3.0.0-beta.13):
+    - PINCache (= 3.0.1-beta.6)
+    - PINRemoteImage/Core
+  - PromiseKit (6.8.3):
+    - PromiseKit/CorePromise (= 6.8.3)
+    - PromiseKit/Foundation (= 6.8.3)
+    - PromiseKit/UIKit (= 6.8.3)
+  - PromiseKit/CorePromise (6.8.3)
+  - PromiseKit/Foundation (6.8.3):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.8.3):
+    - PromiseKit/CorePromise
+  - Realm (3.13.1):
+    - Realm/Headers (= 3.13.1)
+  - Realm/Headers (3.13.1)
+  - RealmSwift (3.13.1):
+    - Realm (= 3.13.1)
+  - SnapKit (4.2.0)
+  - Starscream (3.0.6)
+  - SwiftWebSocket (2.7.0)
+  - Texture (2.7):
+    - Texture/PINRemoteImage (= 2.7)
+  - Texture/Core (2.7)
+  - Texture/PINRemoteImage (2.7):
+    - PINRemoteImage/iOS (= 3.0.0-beta.13)
+    - PINRemoteImage/PINCache
+    - Texture/Core
+
+DEPENDENCIES:
+  - Alamofire
+  - PromiseKit
+  - RealmSwift
+  - SnapKit
+  - Starscream
+  - SwiftWebSocket
+  - Texture
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - PINCache
+    - PINOperation
+    - PINRemoteImage
+    - PromiseKit
+    - Realm
+    - RealmSwift
+    - SnapKit
+    - Starscream
+    - SwiftWebSocket
+    - Texture
+
+SPEC CHECKSUMS:
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  PINCache: d195fdba255283f7e9900a55e3cced377f431f9b
+  PINOperation: a6219e6fc9db9c269eb7a7b871ac193bcf400aac
+  PINRemoteImage: d6d51c5d2adda55f1ce30c96e850b6c4ebd2856a
+  PromiseKit: 94c6e781838c5bf4717677d0d882b0e7250c80fc
+  Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
+  RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
+  SwiftWebSocket: 612c9729fd503cb6b0b8b45390c788686dac306f
+  Texture: 9d7e38965cf22ccd7cd9c249dd78b3f14e70ab6c
+
+PODFILE CHECKSUM: 2bb6e17d68769b4c9d2570fe0aa74b39ba87f0a6
+
+COCOAPODS: 1.5.3

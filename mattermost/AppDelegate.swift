@@ -12,8 +12,20 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
-
-
+  
+  func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+    
+    // TODO: - Придумать как запроксировать AppDelegate
+    window = UIWindow(frame: UIScreen.main.bounds)
+    let vc = InputServerViewController()
+    let assembler = InputServerAssembler()
+    assembler.assemble(with: vc, and: nil)
+    window?.rootViewController = UINavigationController(rootViewController: vc)
+    window?.makeKeyAndVisible()
+    
+    return true
+  }
+  
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
     return true

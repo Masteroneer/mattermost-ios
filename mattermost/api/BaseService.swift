@@ -11,13 +11,15 @@ import Alamofire
 
 class BaseService {
   internal var baseUrl: String
+  internal var cookies: [HTTPCookie]
   
   internal var prefix: String {
     get { fatalError("Must be implemented") }
   }
   
-  init(baseUrl: String) {
+  init(baseUrl: String, cookies: [HTTPCookie]) {
     self.baseUrl = baseUrl
+    self.cookies = cookies
   }
   
   // methodPrefix is a backend server method not a HTTPMethod

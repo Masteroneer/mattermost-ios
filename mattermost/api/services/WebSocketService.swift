@@ -15,24 +15,17 @@ class WebSocketService: BaseService, WebSocketDelegate, WebSocketAdvancedDelegat
   private var socket: WebSocket?
 
   func connect() {
-    var request = URLRequest(url: URL(string: "wss://mattermost.osinit.com/api/v4/websocket")!)
-    request.addValue("MMAUTHTOKEN=4wizsj4973b6mfir816yfp6ejr", forHTTPHeaderField: "Cookie")
-    request.addValue("MMUSERID=hphohak54jr6tdifbd3dzykn8y", forHTTPHeaderField: "Cookie")
-    //request.addValue("https://mattermost.osinit.com", forHTTPHeaderField: "Origin")
-    request.addValue("mattermost.osinit.com", forHTTPHeaderField: "Host")
-    //request.addValue("XMLHttpRequest", forHTTPHeaderField: "X-Requested-With")
-//    request.addValue("MMAUTHTOKEN=41mc55zpxtgetd5f516k4xe84w; Path=/; Expires=Sun, 29 Jul 2046 05:49:53 GMT; Max-Age=863913600; Secure", forHTTPHeaderField: "Cookie")
-//    request.addValue("MMUSERID=hphohak54jr6tdifbd3dzykn8y; Path=/; Expires=Sun, 29 Jul 2046 05:49:53 GMT; Max-Age=863913600; Secure", forHTTPHeaderField: "Cookie")
-//    request.addValue("41mc55zpxtgetd5f516k4xe84w", forHTTPHeaderField: "token")
-//    request.addValue("XMLHttpRequest", forHTTPHeaderField: "X-Requested-With")
-//    request.httpShouldHandleCookies = true
-    socket = WebSocket(request: request)
-    socket?.delegate = self
-    socket?.advancedDelegate = self
-    socket?.onConnect = {
-      self.socket?.write(string: "{\"seq\": 1,\"action\": \"authentication_challenge\",\"data\":{\"token\":\"41mc55zpxtgetd5f516k4xe84w\"}}")
-    }
-    socket?.connect()
+//    var request = URLRequest(url: URL(string: "wss://mattermost.osinit.com/api/v4/websocket")!)
+//    request.addValue("MMAUTHTOKEN=4wizsj4973b6mfir816yfp6ejr", forHTTPHeaderField: "Cookie")
+//    request.addValue("MMUSERID=hphohak54jr6tdifbd3dzykn8y", forHTTPHeaderField: "Cookie")
+//    request.addValue("mattermost.osinit.com", forHTTPHeaderField: "Host")
+//    socket = WebSocket(request: request)
+//    socket?.delegate = self
+//    socket?.advancedDelegate = self
+//    socket?.onConnect = {
+//      self.socket?.write(string: "{\"seq\": 1,\"action\": \"authentication_challenge\",\"data\":{\"token\":\"41mc55zpxtgetd5f516k4xe84w\"}}")
+//    }
+//    socket?.connect()
   }
   
   func websocketDidConnect(socket: WebSocketClient) {

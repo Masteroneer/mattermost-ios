@@ -7,7 +7,6 @@ target 'mattermost' do
   
   # API
   pod 'Alamofire'
-  pod 'PromiseKit'
   pod 'Starscream'
   
   # DB
@@ -16,5 +15,9 @@ target 'mattermost' do
   # View
   pod 'Texture'
   pod 'SnapKit'
+  
+  # Logging
+  pod 'SwiftyBeaver'
 
+  pod 'RamblerAppDelegateProxy'
 end

@@ -29,14 +29,14 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
-                                <action selector="editingChangedEmail:" destination="-1" eventType="editingChanged" id="KQe-Wa-NYw"/>
+                                <action selector="emailEditingChanged:" destination="-1" eventType="editingChanged" id="HBz-8p-uBT"/>
                             </connections>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C2W-eU-ELX">
                             <rect key="frame" x="0.0" y="45" width="335" height="30"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" textContentType="password"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             <connections>
                                 <action selector="passwordEditingChanged:" destination="-1" eventType="editingChanged" id="gaG-hC-A79"/>
                             </connections>

@@ -9,22 +9,27 @@
 import Foundation
 
 final class LoginMVPPresenter: BasePresenter, LoginPresenterProtocol {
-  private let usersService: UsersServiceProtocol
+  private var usersService: UsersServiceProtocol
+  
+  private var email: String = ""
+  private var password: String = ""
   
   required init(baseView: BaseViewPresenterProtocol, baseRouter: BasePresenterRouterProtocol, inputParams: BaseInputParamsProtocol?) {
+    usersService = ApiServiceManager.shared.createService(from: UsersService.self)
     super.init(baseView: baseView, baseRouter: baseRouter, inputParams: inputParams)
-//    usersService = UsersService()
   }
   
   func onChange(email: String) {
-    
+    self.email = email
   }
   
   func onChange(password: String) {
-    
+    self.password = password
   }
   
   func onPressLogin() {
-    
+    usersService.login(loginId: email, password: password) { (res) in
+      
+    }
   }
 }

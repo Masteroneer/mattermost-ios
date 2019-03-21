@@ -38,6 +38,8 @@
 		98FB420D2238DDD600569143 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FB420C2238DDD600569143 /* LoginViewController.swift */; };
 		98FB420F2238DDE600569143 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98FB420E2238DDE600569143 /* LoginViewController.xib */; };
 		98FB42112238E6E300569143 /* WebSocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FB42102238E6E300569143 /* WebSocketService.swift */; };
+		CE4E34EF22435C430045C4E5 /* LoggerAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E34EE22435C430045C4E5 /* LoggerAppDelegate.swift */; };
+		CE89007022423AA80009D970 /* StartScreenAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89006F22423AA80009D970 /* StartScreenAppDelegate.swift */; };
 		DDC2645322241F2400513411 /* UsersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC2645222241F2400513411 /* UsersService.swift */; };
 		DDDC531C22158BCF0032A9A3 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDC531B22158BCF0032A9A3 /* BaseService.swift */; };
 /* End PBXBuildFile section */
@@ -78,6 +80,8 @@
 		98FB42102238E6E300569143 /* WebSocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketService.swift; sourceTree = "<group>"; };
 		A28DF2302C186CA30FDB9013 /* Pods_mattermost.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mattermost.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAF125BC5342248BDCA1E630 /* Pods-mattermost.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mattermost.release.xcconfig"; path = "Pods/Target Support Files/Pods-mattermost/Pods-mattermost.release.xcconfig"; sourceTree = "<group>"; };
+		CE4E34EE22435C430045C4E5 /* LoggerAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerAppDelegate.swift; sourceTree = "<group>"; };
+		CE89006F22423AA80009D970 /* StartScreenAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenAppDelegate.swift; sourceTree = "<group>"; };
 		DDC2645222241F2400513411 /* UsersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersService.swift; sourceTree = "<group>"; };
 		DDDC531B22158BCF0032A9A3 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -250,6 +254,7 @@
 		98FB42072238D73E00569143 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				CE89006E22423A7C0009D970 /* AppDelgates */,
 				98DC742E2240BFD90064EB38 /* module */,
 				9860B823223F8F6000132666 /* TransitionHandler */,
 				98DC742C2240BDF60064EB38 /* ApiServiceManager.swift */,
@@ -277,6 +282,15 @@
 				BAF125BC5342248BDCA1E630 /* Pods-mattermost.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		CE89006E22423A7C0009D970 /* AppDelgates */ = {
+			isa = PBXGroup;
+			children = (
+				CE89006F22423AA80009D970 /* StartScreenAppDelegate.swift */,
+				CE4E34EE22435C430045C4E5 /* LoggerAppDelegate.swift */,
+			);
+			path = AppDelgates;
 			sourceTree = "<group>";
 		};
 		DDDC531A22158BBF0032A9A3 /* api */ = {
@@ -383,16 +397,17 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-mattermost/Pods-mattermost-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-mattermost/Pods-mattermost-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
 				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
 				"${BUILT_PRODUCTS_DIR}/PINRemoteImage/PINRemoteImage.framework",
-				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/RamblerAppDelegateProxy/RamblerAppDelegateProxy.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
 				"${BUILT_PRODUCTS_DIR}/Texture/AsyncDisplayKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -401,16 +416,17 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINRemoteImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RamblerAppDelegateProxy.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AsyncDisplayKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mattermost/Pods-mattermost-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mattermost/Pods-mattermost-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -430,11 +446,13 @@
 				98B51AB6223B7F47003325FA /* BaseView.swift in Sources */,
 				9860B822223F858400132666 /* BaseRouter.swift in Sources */,
 				98DC74262240BBEE0064EB38 /* InputServerPresenterFactory.swift in Sources */,
+				CE89007022423AA80009D970 /* StartScreenAppDelegate.swift in Sources */,
 				98D20C7522378F5D0093E094 /* InputServerViewController.swift in Sources */,
 				98B51ABC223BA72A003325FA /* InputServerTheme.swift in Sources */,
 				98B51AAF223B7AD2003325FA /* InputServerMVPPresenter.swift in Sources */,
 				9860B820223F726C00132666 /* BaseViewController.swift in Sources */,
 				DDC2645322241F2400513411 /* UsersService.swift in Sources */,
+				CE4E34EF22435C430045C4E5 /* LoggerAppDelegate.swift in Sources */,
 				98FB42112238E6E300569143 /* WebSocketService.swift in Sources */,
 				980064CE223FEC980001B4DC /* LoginAssembler.swift in Sources */,
 				98B51AA7223B7886003325FA /* User.swift in Sources */,

@@ -15,15 +15,7 @@ PODS:
   - PINRemoteImage/PINCache (3.0.0-beta.13):
     - PINCache (= 3.0.1-beta.6)
     - PINRemoteImage/Core
-  - PromiseKit (6.8.3):
-    - PromiseKit/CorePromise (= 6.8.3)
-    - PromiseKit/Foundation (= 6.8.3)
-    - PromiseKit/UIKit (= 6.8.3)
-  - PromiseKit/CorePromise (6.8.3)
-  - PromiseKit/Foundation (6.8.3):
-    - PromiseKit/CorePromise
-  - PromiseKit/UIKit (6.8.3):
-    - PromiseKit/CorePromise
+  - RamblerAppDelegateProxy (0.0.5)
   - Realm (3.13.1):
     - Realm/Headers (= 3.13.1)
   - Realm/Headers (3.13.1)
@@ -31,6 +23,7 @@ PODS:
     - Realm (= 3.13.1)
   - SnapKit (4.2.0)
   - Starscream (3.0.6)
+  - SwiftyBeaver (1.6.2)
   - Texture (2.7):
     - Texture/PINRemoteImage (= 2.7)
   - Texture/Core (2.7)
@@ -41,10 +34,11 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - PromiseKit
+  - RamblerAppDelegateProxy
   - RealmSwift
   - SnapKit
   - Starscream
+  - SwiftyBeaver
   - Texture
 
 SPEC REPOS:
@@ -53,11 +47,12 @@ SPEC REPOS:
     - PINCache
     - PINOperation
     - PINRemoteImage
-    - PromiseKit
+    - RamblerAppDelegateProxy
     - Realm
     - RealmSwift
     - SnapKit
     - Starscream
+    - SwiftyBeaver
     - Texture
 
 SPEC CHECKSUMS:
@@ -65,13 +60,14 @@ SPEC CHECKSUMS:
   PINCache: d195fdba255283f7e9900a55e3cced377f431f9b
   PINOperation: a6219e6fc9db9c269eb7a7b871ac193bcf400aac
   PINRemoteImage: d6d51c5d2adda55f1ce30c96e850b6c4ebd2856a
-  PromiseKit: 94c6e781838c5bf4717677d0d882b0e7250c80fc
+  RamblerAppDelegateProxy: 9e90d7bd1406865918538b4c720fa0977b848a1b
   Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
   RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
+  SwiftyBeaver: 8e67ab3cd94389cbbb7a9c7cc02748d98bfee68e
   Texture: 9d7e38965cf22ccd7cd9c249dd78b3f14e70ab6c
 
-PODFILE CHECKSUM: 0664b55c460cc75820307b11416b234799d17838
+PODFILE CHECKSUM: f2dd181e70e8151b930bf02448fc288bbfd2e53f
 
 COCOAPODS: 1.6.1

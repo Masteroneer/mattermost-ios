@@ -15,6 +15,8 @@ protocol InputServerPresenterRouterProtocol: BasePresenterRouterProtocol {
 class InputServerRouter: BaseRouter, InputServerPresenterRouterProtocol {
   func goToLogin() {
     let vc = LoginViewController()
+    let assembler = LoginAssembler()
+    assembler.assemble(with: vc, and: nil)
     transitionHandler.push(viewController: vc, animated: true)
   }
 }

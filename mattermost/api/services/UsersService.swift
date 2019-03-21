@@ -16,18 +16,16 @@ protocol UsersServiceProtocol {
   func getMe()
 }
 
-class UsersService: BaseService, UsersServiceProtocol {
-  override var prefix: String { get { return "users" } }
+final class UsersService: BaseService, UsersServiceProtocol {
+  override var prefix: String { return "users" }
   
   func login(loginId: String, password: String, completion: @escaping LoginResponseCompletion) {
     let parameters: Parameters = ["login_id": loginId, "password": password]
-    self.makeRequest(methodPrefix: "login", method: .post, parameters: parameters, headers: nil).responseJSON { (res) in
-      print(res)
-    }
+    self.makeRequest(methodPrefix: "login", method: .post, parameters: parameters).responseJSON { (res) in }
   }
   
   func getMe() {
-    self.makeRequest(methodPrefix: "me", method: .get, parameters: nil, headers: nil).responseJSON { (res) in
+    self.makeRequest(methodPrefix: "me", method: .get, parameters: nil).responseJSON { (res) in
       print(res)
     }
   }

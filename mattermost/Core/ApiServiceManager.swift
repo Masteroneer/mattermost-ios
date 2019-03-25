@@ -20,7 +20,8 @@ class ApiServiceManager {
   
   func createService<Service:BaseService>(from serviceType: Service.Type) -> Service {
     guard let baseUrl = serverUrlsService.getLastAccessedUrl() else { fatalError("No last accessed url") }
-    let serviceInstance = serviceType.init(baseUrl: baseUrl, version: .v4)
+    let url = URL(string: baseUrl)
+    let serviceInstance = serviceType.init(baseUrl: url!, version: .v4)
     return serviceInstance
   }
 }

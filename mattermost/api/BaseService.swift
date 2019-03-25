@@ -10,28 +10,41 @@ import Foundation
 import Alamofire
 
 enum ApiVersion: String {
-  case v4 = "api/v4/"
+  case v4
 }
 
-class BaseService {
-  internal var baseUrl: String
-  internal var version: ApiVersion
+protocol BaseServiceProtocol {
+  func isAuthorized() -> Bool
+}
+
+class BaseService: BaseServiceProtocol {
   
-  internal var prefix: String {
-    get { fatalError("Must be implemented") }
+  // MARK: - public
+  
+  func isAuthorized() -> Bool {
+    return getCookies() != nil
   }
   
-  required init(baseUrl: String, version: ApiVersion) {
+  // MARK: - internal
+  
+  internal var baseUrl: URL
+  internal var version: ApiVersion
+  
+  internal var apiPathComponent: String { return "api" }
+  internal var servicePathComponent: String {
+    fatalError("Must be implemented")
+  }
+  
+  required init(baseUrl: URL, version: ApiVersion) {
     self.baseUrl = baseUrl
     self.version = version
   }
-  
+
   ///
   /// Request without auth
-  /// - parameter methodPrefix: is a backend server method not a HTTPMethod
   ///
-  internal func makeRequest(methodPrefix: String, method: HTTPMethod, parameters: Parameters?) -> DataRequest {
-    let url = "\(getUrlWithPrefix())/\(methodPrefix)"
+  internal func request(methodPathComponent: String, method: HTTPMethod, parameters: Parameters?) -> DataRequest {
+    let url = getUrlWithServicePrefix().appendingPathComponent(methodPathComponent)
     return Alamofire.request(url,
                               method: method,
                               parameters: parameters,
@@ -41,20 +54,46 @@ class BaseService {
   
   
   /// Request with auth cookies, saved with saveCookies method
-  /// - parameter methodPrefix: is a backend server method not a HTTPMethod
-  internal func makeAuthorizedRequest(methodPrefix: String, method: HTTPMethod, parameters: Parameters?) -> DataRequest {
-    var headers: HTTPHeaders = [:]
-    return Alamofire.request("\(getUrlWithPrefix())/\(methodPrefix)",
+  ///
+  internal func authorizedRequest(methodPathComponent: String, method: HTTPMethod, parameters: Parameters?) -> DataRequest {
+    guard let cookies = getCookies() else { fatalError("No cookies for selected url") }
+    let url = getUrlWithServicePrefix().appendingPathComponent(methodPathComponent)
+    var headers: HTTPHeaders = HTTPCookie.requestHeaderFields(with: cookies)
+    headers["X-Requested-With"] = "XMLHttpRequest" // MAGIC: без этого хедера не работает (без магии жизнь была бы скучной)
+    return Alamofire.request(url,
                               method: method,
                               parameters: parameters,
                               headers: headers)
   }
+  
+  /// Additional to authorizedRequest.
+  /// Request can be serialize responsed data to Codable
+  internal func serializableAuthorizedRequest<Model: Codable>(methodPathComponent: String,
+                                                               method: HTTPMethod,
+                                                               parameters: Parameters?,
+                                                               completion: @escaping (Model) -> Void) {
+    authorizedRequest(methodPathComponent: methodPathComponent, method: method, parameters: parameters).responseJSON { (res) in
+      guard let resData = res.data else { return }
+      
+      let model = try! JSONDecoder().decode(Model.self, from: resData)
 
-  internal func saveCookies() {
-    
+      completion(model)
+    }
   }
   
-  internal func getUrlWithPrefix() -> String {
-    return "\(baseUrl)/\(version.rawValue)\(prefix)"
+  internal func saveCookies(from headers: HTTPHeaders) {
+    let cookies = HTTPCookie.cookies(withResponseHeaderFields: headers, for: baseUrl)
+    HTTPCookieStorage.shared.setCookies(cookies, for: baseUrl, mainDocumentURL: nil)
+  }
+  
+  internal func getCookies() -> [HTTPCookie]? {
+    return HTTPCookieStorage.shared.cookies(for: baseUrl)
+  }
+  
+  internal func getUrlWithServicePrefix() -> URL {
+    return baseUrl
+        .appendingPathComponent(apiPathComponent)
+        .appendingPathComponent(version.rawValue)
+        .appendingPathComponent(servicePathComponent)
   }
 }

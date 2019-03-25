@@ -28,7 +28,7 @@ final class LoginMVPPresenter: BasePresenter, LoginPresenterProtocol {
   }
   
   func onPressLogin() {
-    usersService.login(loginId: email, password: password) { (res) in
+    usersService.login(loginId: email, password: password) {
       
     }
   }

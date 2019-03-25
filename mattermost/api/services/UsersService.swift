@@ -9,24 +9,24 @@
 import Foundation
 import Alamofire
 
-typealias LoginResponseCompletion = (_ token: String) -> Void
-
-protocol UsersServiceProtocol {
-  func login(loginId: String, password: String, completion: @escaping LoginResponseCompletion)
-  func getMe()
+protocol UsersServiceProtocol: BaseServiceProtocol {
+  func login(loginId: String, password: String, completion: @escaping () -> Void)
+  func getMe(completion: @escaping (UserModel) -> Void)
 }
 
 final class UsersService: BaseService, UsersServiceProtocol {
-  override var prefix: String { return "users" }
+  override var servicePathComponent: String { return "users" }
   
-  func login(loginId: String, password: String, completion: @escaping LoginResponseCompletion) {
+  func login(loginId: String, password: String, completion: @escaping () -> Void) {
     let parameters: Parameters = ["login_id": loginId, "password": password]
-    self.makeRequest(methodPrefix: "login", method: .post, parameters: parameters).responseJSON { (res) in }
+    self.request(methodPathComponent: "login", method: .post, parameters: parameters).responseData { (res) in
+      guard let headers = res.response?.allHeaderFields as? HTTPHeaders else { return }
+      self.saveCookies(from: headers)
+      completion()
+    }
   }
   
-  func getMe() {
-    self.makeRequest(methodPrefix: "me", method: .get, parameters: nil).responseJSON { (res) in
-      print(res)
-    }
+  func getMe(completion: @escaping (UserModel) -> Void) {
+//    self.serializableAuthorizedRequest(methodPathComponent: "me", method: .get, parameters: nil, completion: )
   }
 }

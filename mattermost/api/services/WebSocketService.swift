@@ -10,7 +10,7 @@ import Foundation
 import Starscream
 
 class WebSocketService: BaseService, WebSocketDelegate, WebSocketAdvancedDelegate {
-  override var prefix: String { get { return "websocket" } }
+  override var servicePathComponent: String { return "websocket" }
   
   private var socket: WebSocket?
 

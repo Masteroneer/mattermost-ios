@@ -19,7 +19,7 @@ final class InputServerMVPPresenter: BasePresenter, InputServerPresenterProtocol
   required init(baseView: BaseViewPresenterProtocol, baseRouter: BasePresenterRouterProtocol, inputParams: BaseInputParamsProtocol?) {
     super.init(baseView: baseView, baseRouter: baseRouter, inputParams: inputParams)
     
-    // TODO: - Переход к логину если url уже есть, убрать потом
+    // TODO: - Переход к логину если url уже есть, доделать
     if let serverUrlsService = serverUrlsService,
       let _ = serverUrlsService.getLastAccessedUrl() {
       router?.goToLogin()

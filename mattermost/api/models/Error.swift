@@ -13,13 +13,11 @@ struct ErrorModel: Codable {
   var message: String
   var requestId: String
   var statusCode: Int
-  var isOAuth: Bool
   
   enum CodingKeys: String, CodingKey {
     case id
     case message
     case requestId = "request_id"
     case statusCode = "status_code"
-    case isOAuth = "is_oauth"
   }
 }

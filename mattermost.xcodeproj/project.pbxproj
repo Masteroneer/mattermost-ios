@@ -41,6 +41,10 @@
 		CE4E34EF22435C430045C4E5 /* LoggerAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E34EE22435C430045C4E5 /* LoggerAppDelegate.swift */; };
 		CE7EA71F2248C93C0064F342 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7EA71E2248C93C0064F342 /* Error.swift */; };
 		CE89007022423AA80009D970 /* StartScreenAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89006F22423AA80009D970 /* StartScreenAppDelegate.swift */; };
+		CE8965872249FC73001D7B41 /* ApiResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8965862249FC73001D7B41 /* ApiResult.swift */; };
+		CE896589224A0E6A001D7B41 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE896588224A0E6A001D7B41 /* Logger.swift */; };
+		CE89658C224A196C001D7B41 /* TeamService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89658B224A196C001D7B41 /* TeamService.swift */; };
+		CEF746A8224DF56700A40471 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF746A7224DF56700A40471 /* Team.swift */; };
 		DDC2645322241F2400513411 /* UsersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC2645222241F2400513411 /* UsersService.swift */; };
 		DDDC531C22158BCF0032A9A3 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDC531B22158BCF0032A9A3 /* BaseService.swift */; };
 /* End PBXBuildFile section */
@@ -84,6 +88,10 @@
 		CE4E34EE22435C430045C4E5 /* LoggerAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerAppDelegate.swift; sourceTree = "<group>"; };
 		CE7EA71E2248C93C0064F342 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		CE89006F22423AA80009D970 /* StartScreenAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenAppDelegate.swift; sourceTree = "<group>"; };
+		CE8965862249FC73001D7B41 /* ApiResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResult.swift; sourceTree = "<group>"; };
+		CE896588224A0E6A001D7B41 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		CE89658B224A196C001D7B41 /* TeamService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamService.swift; sourceTree = "<group>"; };
+		CEF746A7224DF56700A40471 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		DDC2645222241F2400513411 /* UsersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersService.swift; sourceTree = "<group>"; };
 		DDDC531B22158BCF0032A9A3 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,6 +138,7 @@
 			children = (
 				98B51AA6223B7886003325FA /* User.swift */,
 				CE7EA71E2248C93C0064F342 /* Error.swift */,
+				CEF746A7224DF56700A40471 /* Team.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -137,6 +146,7 @@
 		98B51AA5223B776C003325FA /* services */ = {
 			isa = PBXGroup;
 			children = (
+				CE89658B224A196C001D7B41 /* TeamService.swift */,
 				DDC2645222241F2400513411 /* UsersService.swift */,
 				98FB42102238E6E300569143 /* WebSocketService.swift */,
 			);
@@ -180,6 +190,7 @@
 		98D20C7222378F1B0093E094 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				CE89658A224A14CC001D7B41 /* Channels */,
 				98FB420B2238DDC700569143 /* Login */,
 				98D20C7322378F450093E094 /* InputServer */,
 			);
@@ -261,6 +272,7 @@
 				98DC742E2240BFD90064EB38 /* module */,
 				9860B823223F8F6000132666 /* TransitionHandler */,
 				98DC742C2240BDF60064EB38 /* ApiServiceManager.swift */,
+				CE896588224A0E6A001D7B41 /* Logger.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -296,12 +308,20 @@
 			path = AppDelgates;
 			sourceTree = "<group>";
 		};
+		CE89658A224A14CC001D7B41 /* Channels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Channels;
+			sourceTree = "<group>";
+		};
 		DDDC531A22158BBF0032A9A3 /* api */ = {
 			isa = PBXGroup;
 			children = (
 				98B51AA5223B776C003325FA /* services */,
 				98B51AA4223B7766003325FA /* models */,
 				DDDC531B22158BCF0032A9A3 /* BaseService.swift */,
+				CE8965862249FC73001D7B41 /* ApiResult.swift */,
 			);
 			path = api;
 			sourceTree = "<group>";
@@ -402,30 +422,22 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-mattermost/Pods-mattermost-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
-				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
-				"${BUILT_PRODUCTS_DIR}/PINRemoteImage/PINRemoteImage.framework",
 				"${BUILT_PRODUCTS_DIR}/RamblerAppDelegateProxy/RamblerAppDelegateProxy.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
-				"${BUILT_PRODUCTS_DIR}/Texture/AsyncDisplayKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINRemoteImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RamblerAppDelegateProxy.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AsyncDisplayKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -440,8 +452,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				98FB420D2238DDD600569143 /* LoginViewController.swift in Sources */,
+				CE896589224A0E6A001D7B41 /* Logger.swift in Sources */,
 				9860B825223F8FA900132666 /* UIViewController+TransitionHandler.swift in Sources */,
 				980064D0223FECF00001B4DC /* LoginTheme.swift in Sources */,
+				CE8965872249FC73001D7B41 /* ApiResult.swift in Sources */,
 				98B51AB8223B7F51003325FA /* BasePresenter.swift in Sources */,
 				980064D4223FED940001B4DC /* LoginPresenterProtocol.swift in Sources */,
 				9860B827223F8FB700132666 /* TransitionHandler.swift in Sources */,
@@ -459,6 +473,8 @@
 				CE4E34EF22435C430045C4E5 /* LoggerAppDelegate.swift in Sources */,
 				98FB42112238E6E300569143 /* WebSocketService.swift in Sources */,
 				980064CE223FEC980001B4DC /* LoginAssembler.swift in Sources */,
+				CE89658C224A196C001D7B41 /* TeamService.swift in Sources */,
+				CEF746A8224DF56700A40471 /* Team.swift in Sources */,
 				98B51AA7223B7886003325FA /* User.swift in Sources */,
 				98FB420A2238D7C900569143 /* ServerUrlsService.swift in Sources */,
 				980064CC223FEC320001B4DC /* LoginPresenterFactory.swift in Sources */,

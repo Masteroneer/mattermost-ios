@@ -25,9 +25,9 @@ protocol BasePresenterProtocol: class, BasePresenterViewProtocol {
 
 // Base implementation of presenter
 class BasePresenter: BasePresenterProtocol {
-  internal weak var baseView: BaseViewPresenterProtocol?
+  weak var baseView: BaseViewPresenterProtocol?
   
-  internal var baseRouter: BasePresenterRouterProtocol
+  var baseRouter: BasePresenterRouterProtocol
   
   required init(baseView: BaseViewPresenterProtocol, baseRouter: BasePresenterRouterProtocol, inputParams: BaseInputParamsProtocol?) {
     self.baseView = baseView

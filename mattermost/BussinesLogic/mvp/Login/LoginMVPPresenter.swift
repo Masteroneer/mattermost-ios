@@ -28,8 +28,12 @@ final class LoginMVPPresenter: BasePresenter, LoginPresenterProtocol {
   }
   
   func onPressLogin() {
-    usersService.login(loginId: email, password: password) {
-      
-    }
+//    usersService.login(loginId: email, password: password).onSuccess { (user) in
+//      print(user)
+//    }.onError { (error) in
+//      print(error)
+//    }
+    let teamsService = ApiServiceManager.shared.createService(from: TeamsService.self)
+    teamsService.getTeams()
   }
 }

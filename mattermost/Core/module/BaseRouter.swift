@@ -17,7 +17,8 @@ protocol BaseRouterProtocol: BasePresenterRouterProtocol {
 }
 
 class BaseRouter: BaseRouterProtocol {
-  internal var transitionHandler: TransitionHandlerProtocol
+  // TODO: - weak
+  var transitionHandler: TransitionHandlerProtocol
   
   required init(_ transitionHandler: TransitionHandlerProtocol) {
     self.transitionHandler = transitionHandler

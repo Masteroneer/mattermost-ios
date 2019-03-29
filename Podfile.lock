@@ -1,20 +1,5 @@
 PODS:
-  - Alamofire (4.8.1)
-  - PINCache (3.0.1-beta.6):
-    - PINCache/Arc-exception-safe (= 3.0.1-beta.6)
-    - PINCache/Core (= 3.0.1-beta.6)
-  - PINCache/Arc-exception-safe (3.0.1-beta.6):
-    - PINCache/Core
-  - PINCache/Core (3.0.1-beta.6):
-    - PINOperation (~> 1.1.0)
-  - PINOperation (1.1.1)
-  - PINRemoteImage/Core (3.0.0-beta.13):
-    - PINOperation
-  - PINRemoteImage/iOS (3.0.0-beta.13):
-    - PINRemoteImage/Core
-  - PINRemoteImage/PINCache (3.0.0-beta.13):
-    - PINCache (= 3.0.1-beta.6)
-    - PINRemoteImage/Core
+  - Alamofire (5.0.0-beta.3)
   - RamblerAppDelegateProxy (0.0.5)
   - Realm (3.13.1):
     - Realm/Headers (= 3.13.1)
@@ -24,50 +9,34 @@ PODS:
   - SnapKit (4.2.0)
   - Starscream (3.0.6)
   - SwiftyBeaver (1.6.2)
-  - Texture (2.7):
-    - Texture/PINRemoteImage (= 2.7)
-  - Texture/Core (2.7)
-  - Texture/PINRemoteImage (2.7):
-    - PINRemoteImage/iOS (= 3.0.0-beta.13)
-    - PINRemoteImage/PINCache
-    - Texture/Core
 
 DEPENDENCIES:
-  - Alamofire
+  - Alamofire (~> 5.0.0-beta.3)
   - RamblerAppDelegateProxy
   - RealmSwift
   - SnapKit
   - Starscream
   - SwiftyBeaver
-  - Texture
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
-    - PINCache
-    - PINOperation
-    - PINRemoteImage
     - RamblerAppDelegateProxy
     - Realm
     - RealmSwift
     - SnapKit
     - Starscream
     - SwiftyBeaver
-    - Texture
 
 SPEC CHECKSUMS:
-  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
-  PINCache: d195fdba255283f7e9900a55e3cced377f431f9b
-  PINOperation: a6219e6fc9db9c269eb7a7b871ac193bcf400aac
-  PINRemoteImage: d6d51c5d2adda55f1ce30c96e850b6c4ebd2856a
+  Alamofire: 50d6fa7e8cbe7f84559e86ab641ffd029db655f8
   RamblerAppDelegateProxy: 9e90d7bd1406865918538b4c720fa0977b848a1b
   Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
   RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
   SwiftyBeaver: 8e67ab3cd94389cbbb7a9c7cc02748d98bfee68e
-  Texture: 9d7e38965cf22ccd7cd9c249dd78b3f14e70ab6c
 
-PODFILE CHECKSUM: f2dd181e70e8151b930bf02448fc288bbfd2e53f
+PODFILE CHECKSUM: f43b52f7fd090b926fab233c71e68480659169e5
 
 COCOAPODS: 1.6.1

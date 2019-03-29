@@ -6,14 +6,13 @@ target 'mattermost' do
   use_frameworks!
   
   # API
-  pod 'Alamofire'
+  pod 'Alamofire', '~> 5.0.0-beta.3'
   pod 'Starscream'
   
   # DB
   pod 'RealmSwift'
 
   # View
-  pod 'Texture'
   pod 'SnapKit'
   
   # Logging

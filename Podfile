@@ -6,7 +6,7 @@ target 'mattermost' do
   use_frameworks!
   
   # API
-  pod 'Alamofire', '~> 5.0.0-beta.3'
+  pod 'Alamofire'
   pod 'Starscream'
   
   # DB

@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (5.0.0-beta.3)
+  - Alamofire (4.8.1)
   - RamblerAppDelegateProxy (0.0.5)
   - Realm (3.13.1):
     - Realm/Headers (= 3.13.1)
@@ -11,7 +11,7 @@ PODS:
   - SwiftyBeaver (1.6.2)
 
 DEPENDENCIES:
-  - Alamofire (~> 5.0.0-beta.3)
+  - Alamofire
   - RamblerAppDelegateProxy
   - RealmSwift
   - SnapKit
@@ -29,7 +29,7 @@ SPEC REPOS:
     - SwiftyBeaver
 
 SPEC CHECKSUMS:
-  Alamofire: 50d6fa7e8cbe7f84559e86ab641ffd029db655f8
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   RamblerAppDelegateProxy: 9e90d7bd1406865918538b4c720fa0977b848a1b
   Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
   RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
@@ -37,6 +37,6 @@ SPEC CHECKSUMS:
   Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
   SwiftyBeaver: 8e67ab3cd94389cbbb7a9c7cc02748d98bfee68e
 
-PODFILE CHECKSUM: f43b52f7fd090b926fab233c71e68480659169e5
+PODFILE CHECKSUM: 0705a3b54f4790aa5d7df93e1743c3a1cffcfe25
 
 COCOAPODS: 1.6.1

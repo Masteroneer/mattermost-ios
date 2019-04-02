@@ -13,8 +13,6 @@ import SnapKit
 final class InputServerViewController: BaseViewController {
   @IBOutlet weak var topLabel: UILabel!
   
-  private var theme: InputServerThemeProtocol? { return baseTheme as? InputServerThemeProtocol }
-  
   private var presenter: InputServerPresenterProtocol? {
     return basePresenter as? InputServerPresenterProtocol
   }

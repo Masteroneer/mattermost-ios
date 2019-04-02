@@ -9,9 +9,14 @@
 import Foundation
 import UIKit
 
-final class LoginViewController: BaseViewController {
-  
+protocol LoginViewProtocol: BaseViewProtocol {
+  func setErrorMessage(_ message: String)
+}
+
+final class LoginViewController: BaseViewController, LoginViewProtocol {
   private var presenter: LoginPresenterProtocol? { return basePresenter as? LoginPresenterProtocol }
+  
+  @IBOutlet weak var errorLabel: UILabel!
   
   @IBAction func emailEditingChanged(_ sender: Any) {
     guard let emailTextField = sender as? UITextField,
@@ -29,5 +34,11 @@ final class LoginViewController: BaseViewController {
   
   @IBAction func onLoginPressed(_ sender: Any) {
     presenter?.onPressLogin()
+  }
+  
+  // MARK: - Login View Protocol
+  
+  func setErrorMessage(_ message: String) {
+    errorLabel.text = message
   }
 }

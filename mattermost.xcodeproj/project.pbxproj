@@ -39,6 +39,16 @@
 		98FB420F2238DDE600569143 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98FB420E2238DDE600569143 /* LoginViewController.xib */; };
 		98FB42112238E6E300569143 /* WebSocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FB42102238E6E300569143 /* WebSocketService.swift */; };
 		CE4E34EF22435C430045C4E5 /* LoggerAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E34EE22435C430045C4E5 /* LoggerAppDelegate.swift */; };
+		CE7840F722533357006E14DB /* ChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7840F622533356006E14DB /* ChannelsViewController.swift */; };
+		CE7840F92253338B006E14DB /* ChannelsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7840F82253338A006E14DB /* ChannelsViewController.xib */; };
+		CE7840FB225333A6006E14DB /* ChannelsAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7840FA225333A6006E14DB /* ChannelsAssembler.swift */; };
+		CE7840FD225334DA006E14DB /* BaseThemeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7840FC225334D9006E14DB /* BaseThemeFactory.swift */; };
+		CE7840FF2253392E006E14DB /* ChannelsPresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7840FE2253392E006E14DB /* ChannelsPresenterFactory.swift */; };
+		CE78410122533B0B006E14DB /* ChannelsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78410022533B0B006E14DB /* ChannelsPresenterProtocol.swift */; };
+		CE78410422533C34006E14DB /* ChannelsMVPPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78410322533C34006E14DB /* ChannelsMVPPresenter.swift */; };
+		CE78410722534116006E14DB /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78410622534116006E14DB /* Utils.swift */; };
+		CE78410922534C3B006E14DB /* ChannelsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78410822534C3B006E14DB /* ChannelsService.swift */; };
+		CE78410B22534E27006E14DB /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78410A22534E27006E14DB /* Channel.swift */; };
 		CE7EA71F2248C93C0064F342 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7EA71E2248C93C0064F342 /* Error.swift */; };
 		CE89007022423AA80009D970 /* StartScreenAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89006F22423AA80009D970 /* StartScreenAppDelegate.swift */; };
 		CE8965872249FC73001D7B41 /* ApiResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8965862249FC73001D7B41 /* ApiResult.swift */; };
@@ -86,6 +96,16 @@
 		A28DF2302C186CA30FDB9013 /* Pods_mattermost.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mattermost.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAF125BC5342248BDCA1E630 /* Pods-mattermost.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mattermost.release.xcconfig"; path = "Pods/Target Support Files/Pods-mattermost/Pods-mattermost.release.xcconfig"; sourceTree = "<group>"; };
 		CE4E34EE22435C430045C4E5 /* LoggerAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerAppDelegate.swift; sourceTree = "<group>"; };
+		CE7840F622533356006E14DB /* ChannelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsViewController.swift; sourceTree = "<group>"; };
+		CE7840F82253338A006E14DB /* ChannelsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelsViewController.xib; sourceTree = "<group>"; };
+		CE7840FA225333A6006E14DB /* ChannelsAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsAssembler.swift; sourceTree = "<group>"; };
+		CE7840FC225334D9006E14DB /* BaseThemeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseThemeFactory.swift; sourceTree = "<group>"; };
+		CE7840FE2253392E006E14DB /* ChannelsPresenterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsPresenterFactory.swift; sourceTree = "<group>"; };
+		CE78410022533B0B006E14DB /* ChannelsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsPresenterProtocol.swift; sourceTree = "<group>"; };
+		CE78410322533C34006E14DB /* ChannelsMVPPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsMVPPresenter.swift; sourceTree = "<group>"; };
+		CE78410622534116006E14DB /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		CE78410822534C3B006E14DB /* ChannelsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsService.swift; sourceTree = "<group>"; };
+		CE78410A22534E27006E14DB /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		CE7EA71E2248C93C0064F342 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		CE89006F22423AA80009D970 /* StartScreenAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenAppDelegate.swift; sourceTree = "<group>"; };
 		CE8965862249FC73001D7B41 /* ApiResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResult.swift; sourceTree = "<group>"; };
@@ -139,6 +159,7 @@
 				98B51AA6223B7886003325FA /* User.swift */,
 				CE7EA71E2248C93C0064F342 /* Error.swift */,
 				CEF746A7224DF56700A40471 /* Team.swift */,
+				CE78410A22534E27006E14DB /* Channel.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -149,6 +170,7 @@
 				CE89658B224A196C001D7B41 /* TeamService.swift */,
 				DDC2645222241F2400513411 /* UsersService.swift */,
 				98FB42102238E6E300569143 /* WebSocketService.swift */,
+				CE78410822534C3B006E14DB /* ChannelsService.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -173,6 +195,7 @@
 		98B51AAC223B7AAE003325FA /* mvp */ = {
 			isa = PBXGroup;
 			children = (
+				CE78410222533C24006E14DB /* Channels */,
 				980064C8223FEC150001B4DC /* Login */,
 				98B51AAD223B7AB8003325FA /* InputServer */,
 			);
@@ -215,6 +238,7 @@
 			children = (
 				98DC74252240BBEE0064EB38 /* InputServerPresenterFactory.swift */,
 				980064CB223FEC320001B4DC /* LoginPresenterFactory.swift */,
+				CE7840FE2253392E006E14DB /* ChannelsPresenterFactory.swift */,
 			);
 			path = factories;
 			sourceTree = "<group>";
@@ -227,6 +251,7 @@
 				98B51AB7223B7F51003325FA /* BasePresenter.swift */,
 				9860B81F223F726C00132666 /* BaseViewController.swift */,
 				9860B821223F858400132666 /* BaseRouter.swift */,
+				CE7840FC225334D9006E14DB /* BaseThemeFactory.swift */,
 			);
 			path = module;
 			sourceTree = "<group>";
@@ -268,6 +293,7 @@
 		98FB42072238D73E00569143 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				CE78410522534109006E14DB /* Utils */,
 				CE89006E22423A7C0009D970 /* AppDelgates */,
 				98DC742E2240BFD90064EB38 /* module */,
 				9860B823223F8F6000132666 /* TransitionHandler */,
@@ -299,6 +325,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		CE78410222533C24006E14DB /* Channels */ = {
+			isa = PBXGroup;
+			children = (
+				CE78410322533C34006E14DB /* ChannelsMVPPresenter.swift */,
+			);
+			path = Channels;
+			sourceTree = "<group>";
+		};
+		CE78410522534109006E14DB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CE78410622534116006E14DB /* Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		CE89006E22423A7C0009D970 /* AppDelgates */ = {
 			isa = PBXGroup;
 			children = (
@@ -311,6 +353,10 @@
 		CE89658A224A14CC001D7B41 /* Channels */ = {
 			isa = PBXGroup;
 			children = (
+				CE7840F622533356006E14DB /* ChannelsViewController.swift */,
+				CE7840F82253338A006E14DB /* ChannelsViewController.xib */,
+				CE7840FA225333A6006E14DB /* ChannelsAssembler.swift */,
+				CE78410022533B0B006E14DB /* ChannelsPresenterProtocol.swift */,
 			);
 			path = Channels;
 			sourceTree = "<group>";
@@ -388,6 +434,7 @@
 			files = (
 				98FB420F2238DDE600569143 /* LoginViewController.xib in Resources */,
 				98FB42062238D22D00569143 /* InputServerViewController.xib in Resources */,
+				CE7840F92253338B006E14DB /* ChannelsViewController.xib in Resources */,
 				98E8E66A221553EA00F13355 /* LaunchScreen.storyboard in Resources */,
 				98E8E667221553EA00F13355 /* Assets.xcassets in Resources */,
 			);
@@ -451,34 +498,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE7840FF2253392E006E14DB /* ChannelsPresenterFactory.swift in Sources */,
 				98FB420D2238DDD600569143 /* LoginViewController.swift in Sources */,
 				CE896589224A0E6A001D7B41 /* Logger.swift in Sources */,
 				9860B825223F8FA900132666 /* UIViewController+TransitionHandler.swift in Sources */,
 				980064D0223FECF00001B4DC /* LoginTheme.swift in Sources */,
 				CE8965872249FC73001D7B41 /* ApiResult.swift in Sources */,
 				98B51AB8223B7F51003325FA /* BasePresenter.swift in Sources */,
+				CE78410922534C3B006E14DB /* ChannelsService.swift in Sources */,
 				980064D4223FED940001B4DC /* LoginPresenterProtocol.swift in Sources */,
 				9860B827223F8FB700132666 /* TransitionHandler.swift in Sources */,
 				980064CA223FEC240001B4DC /* LoginMVPPresenter.swift in Sources */,
+				CE7840FD225334DA006E14DB /* BaseThemeFactory.swift in Sources */,
 				98B51AB6223B7F47003325FA /* BaseView.swift in Sources */,
+				CE78410B22534E27006E14DB /* Channel.swift in Sources */,
 				9860B822223F858400132666 /* BaseRouter.swift in Sources */,
 				98DC74262240BBEE0064EB38 /* InputServerPresenterFactory.swift in Sources */,
 				CE89007022423AA80009D970 /* StartScreenAppDelegate.swift in Sources */,
+				CE7840FB225333A6006E14DB /* ChannelsAssembler.swift in Sources */,
 				98D20C7522378F5D0093E094 /* InputServerViewController.swift in Sources */,
+				CE78410722534116006E14DB /* Utils.swift in Sources */,
 				CE7EA71F2248C93C0064F342 /* Error.swift in Sources */,
 				98B51ABC223BA72A003325FA /* InputServerTheme.swift in Sources */,
 				98B51AAF223B7AD2003325FA /* InputServerMVPPresenter.swift in Sources */,
 				9860B820223F726C00132666 /* BaseViewController.swift in Sources */,
 				DDC2645322241F2400513411 /* UsersService.swift in Sources */,
+				CE78410422533C34006E14DB /* ChannelsMVPPresenter.swift in Sources */,
 				CE4E34EF22435C430045C4E5 /* LoggerAppDelegate.swift in Sources */,
 				98FB42112238E6E300569143 /* WebSocketService.swift in Sources */,
 				980064CE223FEC980001B4DC /* LoginAssembler.swift in Sources */,
 				CE89658C224A196C001D7B41 /* TeamService.swift in Sources */,
 				CEF746A8224DF56700A40471 /* Team.swift in Sources */,
 				98B51AA7223B7886003325FA /* User.swift in Sources */,
+				CE7840F722533357006E14DB /* ChannelsViewController.swift in Sources */,
 				98FB420A2238D7C900569143 /* ServerUrlsService.swift in Sources */,
 				980064CC223FEC320001B4DC /* LoginPresenterFactory.swift in Sources */,
 				98B51AAA223B7A7E003325FA /* InputServerAssembler.swift in Sources */,
+				CE78410122533B0B006E14DB /* ChannelsPresenterProtocol.swift in Sources */,
 				DDDC531C22158BCF0032A9A3 /* BaseService.swift in Sources */,
 				98B51AB1223B7B06003325FA /* InputServerPresenterProtocol.swift in Sources */,
 				98E8E660221553E700F13355 /* AppDelegate.swift in Sources */,

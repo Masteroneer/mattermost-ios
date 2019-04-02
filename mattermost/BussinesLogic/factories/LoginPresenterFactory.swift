@@ -9,7 +9,10 @@
 import Foundation
 
 final class LoginPresenterFactory: BasePresenterFactoryProtocol {
-  func createPresenter(baseView: BaseViewPresenterProtocol, baseRouter: BasePresenterRouterProtocol, baseInputParams: BaseInputParamsProtocol?) -> BasePresenterProtocol {
+  func createMVPPresenter(baseView: BaseViewPresenterProtocol,
+                          baseRouter: BasePresenterRouterProtocol,
+                          baseInputParams: BaseInputParamsProtocol?) -> BasePresenterProtocol {
+    
     return LoginMVPPresenter(baseView: baseView, baseRouter: baseRouter, inputParams: baseInputParams)
   }
 }

@@ -10,35 +10,44 @@ import Foundation
 import Alamofire
 
 protocol UsersServiceProtocol: BaseServiceProtocol {
-  func login(loginId: String, password: String) -> ApiResult<UserModel, ErrorModel>
-  func getMe() -> ApiResult<UserModel, ErrorModel>
+  func login(loginId: String, password: String, completion: @escaping (ApiResult<UserModel, ErrorModel>) -> Void)
+  func getMe(completion: @escaping (ApiResult<UserModel, ErrorModel>) -> Void)
 }
 
 final class UsersService: BaseService, UsersServiceProtocol {
   override var servicePathComponent: String { return "users" }
   
-  // TODO: - Доделать
-  func login(loginId: String, password: String) -> ApiResult<UserModel, ErrorModel> {
-    let result = ApiResult<UserModel, ErrorModel>()
+  func login(loginId: String,
+             password: String,
+             completion: @escaping (ApiResult<UserModel, ErrorModel>) -> Void) {
+    
     let parameters: Parameters = ["login_id": loginId, "password": password]
-    self.request(methodPathComponent: "login", method: .post, parameters: parameters).responseData { (res) in
-      guard let headers = res.response?.allHeaderFields as? [String: String],
-          let status = res.response?.statusCode,
+    let dataRequest = request(methodPathComponent: "login",
+                              method: .post,
+                              headers: nil,
+                              parameters: parameters,
+                              encoding: JSONEncoding.default)
+    
+    dataRequest.responseData { (res) in
+      guard let headers = res.response?.allHeaderFields as? HTTPHeaders,
           let resData = res.data else { return }
+      
       self.saveCookies(from: headers)
       
-      if status == 200 {
-        let model = try! JSONDecoder().decode(UserModel.self, from: resData)
-        result.send(success: model)
-      } else {
+      do {
+        let model = try JSONDecoder().decode(UserModel.self, from: resData)
+        completion(.success(model))
+      } catch {
         let model = try! JSONDecoder().decode(ErrorModel.self, from: resData)
-        result.send(error: model)
+        completion(.failure(model))
       }
     }
-    return result
   }
   
-  func getMe() -> ApiResult<UserModel, ErrorModel> {
-    return self.serializableAuthorizedRequest(methodPathComponent: "me", method: .get, parameters: nil)
+  func getMe(completion: @escaping (ApiResult<UserModel, ErrorModel>) -> Void) {
+    self.serializableAuthorizedRequest(methodPathComponent: "me",
+                                       method: .get,
+                                       parameters: nil,
+                                       completion: completion)
   }
 }

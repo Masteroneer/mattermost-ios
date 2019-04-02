@@ -10,7 +10,7 @@ import Foundation
 
 protocol BasePresenterFactoryProtocol {
   init()
-  func createPresenter(baseView: BaseViewPresenterProtocol, baseRouter: BasePresenterRouterProtocol, baseInputParams: BaseInputParamsProtocol?) -> BasePresenterProtocol
+  func createMVPPresenter(baseView: BaseViewPresenterProtocol, baseRouter: BasePresenterRouterProtocol, baseInputParams: BaseInputParamsProtocol?) -> BasePresenterProtocol
 }
 
 // Input params for module

@@ -9,15 +9,9 @@
 import Foundation
 import UIKit
 
-// TODO: зависимость от UIKit
-protocol BaseThemeProtocol {
-  var backgroundColor: UIColor { get }
-  init()
-}
-
 protocol BaseViewProtocol: BaseViewPresenterProtocol, TransitionHandlerProtocol {
   var basePresenter: BasePresenterViewProtocol? { get set }
-  var baseTheme: BaseThemeProtocol? { get set }
+  //var baseThemeFactory: BaseThemeProtocol? { get set }
 }
 
 // Protocol to interact presenter with view

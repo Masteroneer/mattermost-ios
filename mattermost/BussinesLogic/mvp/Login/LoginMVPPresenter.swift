@@ -9,6 +9,8 @@
 import Foundation
 
 final class LoginMVPPresenter: BasePresenter, LoginPresenterProtocol {
+  private var view: LoginViewProtocol? { return baseView as? LoginViewProtocol }
+  private var router: LoginRouterProtocol? { return baseRouter as? LoginRouterProtocol }
   private var usersService: UsersServiceProtocol
   
   private var email: String = ""
@@ -28,12 +30,15 @@ final class LoginMVPPresenter: BasePresenter, LoginPresenterProtocol {
   }
   
   func onPressLogin() {
-//    usersService.login(loginId: email, password: password).onSuccess { (user) in
-//      print(user)
-//    }.onError { (error) in
-//      print(error)
-//    }
-    let teamsService = ApiServiceManager.shared.createService(from: TeamsService.self)
-    teamsService.getTeams()
+    usersService.login(loginId: email, password: password) { [weak self] (result) in
+      guard let strongSelf = self else { return }
+      
+      switch result {
+      case .success(_):
+        strongSelf.router?.goToChannelsList()
+      case .failure(let error):
+        strongSelf.view?.setErrorMessage(error.message)
+      }
+    }
   }
 }

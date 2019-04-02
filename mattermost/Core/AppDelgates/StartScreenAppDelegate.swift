@@ -19,13 +19,25 @@ class StartScreenAppDelegate: UIResponder, UIApplicationDelegate {
     return true
   }
   
-  // TODO: - Убрать опционалы
   func getRootViewController() -> UIViewController {
     let serverUrlsService: ServerUrlsServiceProtocol = ServerUrlsService()
     
     var viewController: BaseViewController?
     let assembler: BaseAssemblerProtocol?
     
+    // Check if user authorized
+    if let lastUrlStr = serverUrlsService.getLastAccessedUrl() {
+      let lastUrl = URL(string: lastUrlStr)
+      let baseService = BaseService(baseUrl: lastUrl!, version: .v4)
+      if baseService.isAuthorized() {
+        let channelsVC = ChannelsViewController()
+        let channelsAssembler = ChannelsAssembler()
+        channelsAssembler.assemble(with: channelsVC, and: nil)
+        return channelsVC
+      }
+    }
+    
+    // User doesnt authorized
     if let _ = serverUrlsService.getLastAccessedUrl() {
       viewController = LoginViewController()
       assembler = LoginAssembler()
@@ -34,7 +46,7 @@ class StartScreenAppDelegate: UIResponder, UIApplicationDelegate {
       assembler = InputServerAssembler()
     }
     
-    assembler!.assemble(with: viewController!, and: nil)
+    assembler?.assemble(with: viewController!, and: nil)
     
     return viewController!
   }

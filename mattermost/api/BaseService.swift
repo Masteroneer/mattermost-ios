@@ -14,6 +14,7 @@ enum ApiVersion: String {
 }
 
 protocol BaseServiceProtocol {
+  init(baseUrl: URL, version: ApiVersion)
   func isAuthorized() -> Bool
 }
 
@@ -22,20 +23,6 @@ class BaseService: BaseServiceProtocol {
   // MARK: - private
   
   private let loggerGroupName = "API"
-  
-  private func request(methodPathComponent: String?, method: HTTPMethod, headers: HTTPHeaders, parameters: Parameters?) -> DataRequest {
-    var url = getUrlWithServicePrefix()
-    
-    if let methodPathComponent = methodPathComponent {
-      url.appendPathComponent(methodPathComponent)
-    }
-    
-    return AF.request(url,
-                       method: method,
-                       parameters: parameters,
-                       encoding: JSONEncoding.default,
-                       headers: headers)
-  }
   
   // MARK: - public
   
@@ -49,6 +36,8 @@ class BaseService: BaseServiceProtocol {
   var version: ApiVersion
   
   var apiPathComponent: String { return "api" }
+  var myServicePathComponent: String { return "users/me" } // TODO: #line 123
+  var isMyRequest: Bool = false // TODO: #line 123
   var servicePathComponent: String {
     fatalError("Must be implemented")
   }
@@ -58,61 +47,63 @@ class BaseService: BaseServiceProtocol {
     self.version = version
   }
   
-  ///
-  /// Request without auth
-  ///
-  func request(methodPathComponent: String, method: HTTPMethod, parameters: Parameters?) -> DataRequest {
-    let url = getUrlWithServicePrefix().appendingPathComponent(methodPathComponent)
-    Logger.shared.printd(group: loggerGroupName, url, method, parameters ?? "")
-    return AF.request(url,
-                              method: method,
-                              parameters: parameters,
-                              encoding: JSONEncoding.default,
-                              headers: nil)
-  }
-  
-  
-  /// Request with auth cookies, saved with saveCookies method
-  ///
-  func authorizedRequest(methodPathComponent: String?, method: HTTPMethod, parameters: Parameters?) -> DataRequest {
-    guard let cookies = getCookies() else { fatalError("No cookies for selected url") }
+  func request(methodPathComponent: String?,
+               method: HTTPMethod,
+               headers: HTTPHeaders?,
+               parameters: Parameters?,
+               encoding: ParameterEncoding = URLEncoding.default) -> DataRequest {
+    
     var url = getUrlWithServicePrefix()
     
     if let methodPathComponent = methodPathComponent {
       url = url.appendingPathComponent(methodPathComponent)
     }
+    Logger.shared.printd(group: loggerGroupName, url, headers ?? "", method, parameters ?? "", encoding)
+    return Alamofire.request(url,
+                             method: method,
+                             parameters: parameters,
+                             encoding: encoding,
+                             headers: headers)
+  }
+  
+  
+  /// Request with auth cookies, saved with saveCookies method
+  ///
+  func authorizedRequest(methodPathComponent: String?,
+                         method: HTTPMethod,
+                         parameters: Parameters?,
+                         encoding: ParameterEncoding = URLEncoding.default) -> DataRequest {
     
-    var headers: [String: String] = HTTPCookie.requestHeaderFields(with: cookies)
+    guard let cookies = getCookies() else { fatalError("No cookies for selected url") }
+    var headers: HTTPHeaders = HTTPCookie.requestHeaderFields(with: cookies)
     headers["X-Requested-With"] = "XMLHttpRequest" // MAGIC: без этого хедера не работает (без магии жизнь была бы скучной)
-    Logger.shared.printd(group: loggerGroupName, url, headers, method, parameters ?? "")
-    return AF.request("https://httpbin.org/get")
-    //    return AF.request(url,
-//                      method: method,
-//                      parameters: parameters,
-//                      headers: headers)
+    return request(methodPathComponent: methodPathComponent,
+                   method: method,
+                   headers: headers,
+                   parameters: parameters,
+                   encoding: encoding)
   }
   
   /// Additional to authorizedRequest.
   /// Request can be serialize responsed data to type that conforms Codable
-  func serializableAuthorizedRequest<Model: Codable>(methodPathComponent: String,
-                                                               method: HTTPMethod,
-                                                               parameters: Parameters?) -> ApiResult<Model, ErrorModel> {
-    let result = ApiResult<Model, ErrorModel>()
-    authorizedRequest(methodPathComponent: methodPathComponent, method: method, parameters: parameters).responseData { (res) in
-      guard let resData = res.data,
-          let status = res.response?.statusCode else { return }
+  func serializableAuthorizedRequest<Model: Codable>(methodPathComponent: String?,
+                                                     method: HTTPMethod,
+                                                     parameters: Parameters?,
+                                                     encoding: ParameterEncoding = URLEncoding.default,
+                                                     completion: @escaping (ApiResult<Model, ErrorModel>) -> Void) {
+    
+    let dataRequest = authorizedRequest(methodPathComponent: methodPathComponent, method: method, parameters: parameters, encoding: encoding)
+    dataRequest.responseData { (res) in
+      guard let resData = res.data else { return }
       
-      if status == 200 {
-        let model = try! JSONDecoder().decode(Model.self, from: resData)
-        result.send(success: model)
-      } else {
+      do {
+        let model = try JSONDecoder().decode(Model.self, from: resData)
+        completion(.success(model))
+      } catch {
         let model = try! JSONDecoder().decode(ErrorModel.self, from: resData)
-        result.send(error: model)
+        completion(.failure(model))
       }
-      }.responseDecodable { (response: DataResponse<Model>) in
-        print(response)
     }
-    return result
   }
   
   func saveCookies(from headers: [String: String]) {
@@ -125,9 +116,17 @@ class BaseService: BaseServiceProtocol {
   }
   
   func getUrlWithServicePrefix() -> URL {
-    return baseUrl
-        .appendingPathComponent(apiPathComponent)
-        .appendingPathComponent(version.rawValue)
-        .appendingPathComponent(servicePathComponent)
+    var url =  baseUrl
+                .appendingPathComponent(apiPathComponent)
+                .appendingPathComponent(version.rawValue)
+    
+    // TODO: - ДА ДА ЭТО КОСТЫЛЬ, НУ ЧТО ПОДЕЛАТЬ БЕЗ ЭТОГО НИКУДА
+    if isMyRequest {
+      url = url.appendingPathComponent(myServicePathComponent)
+    }
+    
+    url = url.appendingPathComponent(servicePathComponent)
+    
+    return url
   }
 }

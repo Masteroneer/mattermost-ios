@@ -9,15 +9,27 @@
 import Foundation
 
 protocol TeamsServiceProtocol: BaseServiceProtocol {
-  func getTeams()
+  func getTeams(completion: @escaping (ApiResult<[TeamModel], ErrorModel>) -> Void)
+  func getMyTeams(completion: @escaping (ApiResult<[TeamModel], ErrorModel>) -> Void)
 }
 
 final class TeamsService: BaseService, TeamsServiceProtocol {
   override var servicePathComponent: String { return "teams" }
   
-  func getTeams() {
-    authorizedRequest(methodPathComponent: nil, method: .get, parameters: nil).responseString { (res) in
-      print(res)
-    }
+  func getTeams(completion: @escaping (ApiResult<[TeamModel], ErrorModel>) -> Void) {
+    isMyRequest = false
+    serializableAuthorizedRequest(methodPathComponent: nil,
+                                  method: .get,
+                                  parameters: nil,
+                                  completion: completion)
+  }
+  
+  func getMyTeams(completion: @escaping (ApiResult<[TeamModel], ErrorModel>) -> Void) {
+    isMyRequest = true
+    // TODO: - ДА ДА КОСТЫЛЬ НА КОСТЫЛЕ
+    serializableAuthorizedRequest(methodPathComponent: nil,
+                                  method: .get,
+                                  parameters: nil,
+                                  completion: completion)
   }
 }

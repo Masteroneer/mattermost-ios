@@ -10,6 +10,5 @@ import Foundation
 
 final class LoginAssembler: BaseAssemblerProtocol {
   var presenterFactory: BasePresenterFactoryProtocol.Type { return LoginPresenterFactory.self }
-  var theme: BaseThemeProtocol.Type { return LoginTheme.self }
   var router: BaseRouterProtocol.Type { return LoginRouter.self }
 }

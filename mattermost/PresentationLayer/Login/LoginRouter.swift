@@ -14,6 +14,10 @@ protocol LoginRouterProtocol {
 
 final class LoginRouter: BaseRouter, LoginRouterProtocol {
   func goToChannelsList() {
+    let channelsViewController = ChannelsViewController()
+    let assembler = ChannelsAssembler()
+    assembler.assemble(with: channelsViewController, and: nil)
     
+    transitionHandler.push(viewController: channelsViewController, animated: true)
   }
 }

@@ -10,22 +10,22 @@ import Foundation
 
 protocol BaseAssemblerProtocol {
   var presenterFactory: BasePresenterFactoryProtocol.Type { get }
-  var theme: BaseThemeProtocol.Type { get }
+  //var themeFactory: BaseThemeFactoryProtocol.Type { get }
   var router: BaseRouterProtocol.Type { get }
 }
 
 extension BaseAssemblerProtocol {
   func assemble(with view: BaseViewProtocol, and inputParams: BaseInputParamsProtocol?) {
     // theme
-    let themeInstance = theme.init()
-    view.baseTheme = themeInstance
-  
+//    let themeFactoryInstance = themeFactory.init()
+//    view.baseThemeFactory = themeFactoryInstance.createDefaultTheme()
+
     // router
     let routerInstance = router.init(view)
     
     // presenter
     let presenterFactoryInstance = presenterFactory.init()
-    let presenterInstance = presenterFactoryInstance.createPresenter(baseView: view, baseRouter: routerInstance, baseInputParams: inputParams)
+    let presenterInstance = presenterFactoryInstance.createMVPPresenter(baseView: view, baseRouter: routerInstance, baseInputParams: inputParams)
     
     // view
     view.basePresenter = presenterInstance

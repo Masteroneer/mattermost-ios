@@ -22,7 +22,8 @@ class BaseService: BaseServiceProtocol {
   
   // MARK: - private
   
-  private let loggerGroupName = "API"
+  private let loggerGroupNameRequest = "API REQUEST"
+  private let loggerGroupNameResponse = "API RESPONSE"
   
   // MARK: - public
   
@@ -36,8 +37,6 @@ class BaseService: BaseServiceProtocol {
   var version: ApiVersion
   
   var apiPathComponent: String { return "api" }
-  var myServicePathComponent: String { return "users/me" } // TODO: #line 123
-  var isMyRequest: Bool = false // TODO: #line 123
   var servicePathComponent: String {
     fatalError("Must be implemented")
   }
@@ -53,17 +52,29 @@ class BaseService: BaseServiceProtocol {
                parameters: Parameters?,
                encoding: ParameterEncoding = URLEncoding.default) -> DataRequest {
     
-    var url = getUrlWithServicePrefix()
+    var url = getUrlForRequest() // getUrlWithServicePrefix()
     
     if let methodPathComponent = methodPathComponent {
       url = url.appendingPathComponent(methodPathComponent)
     }
-    Logger.shared.printd(group: loggerGroupName, url, headers ?? "", method, parameters ?? "", encoding)
-    return Alamofire.request(url,
-                             method: method,
-                             parameters: parameters,
-                             encoding: encoding,
-                             headers: headers)
+    Logger.shared.printd(group: loggerGroupNameRequest,
+                         "\nURL: \(url)",
+                         "\nHeaders: \(String(describing: headers))",
+                         "\nMethod: \(method)",
+                         "\nParameters: \(String(describing: parameters))",
+                         "\nEncoding: \(encoding)")
+    let dataRequest =  Alamofire.request(url,
+                                         method: method,
+                                         parameters: parameters,
+                                         encoding: encoding,
+                                         headers: headers)
+    dataRequest.responseString { [weak self] (response) in
+      guard let strongSelf = self else { return }
+      Logger.shared.printd(group: strongSelf.loggerGroupNameResponse,
+                           "\nStatus: \(String(describing: response.response?.statusCode))",
+                           "\nData: \(String(describing: response.result.value))")
+    }
+    return dataRequest
   }
   
   
@@ -96,6 +107,7 @@ class BaseService: BaseServiceProtocol {
     dataRequest.responseData { (res) in
       guard let resData = res.data else { return }
       
+      // TODO: заюзать Alamofire enum Result
       do {
         let model = try JSONDecoder().decode(Model.self, from: resData)
         completion(.success(model))
@@ -115,15 +127,16 @@ class BaseService: BaseServiceProtocol {
     return HTTPCookieStorage.shared.cookies(for: baseUrl)
   }
   
+  func getUrlForRequest() -> URL {
+    return baseUrl
+            .appendingPathComponent(apiPathComponent)
+            .appendingPathComponent(version.rawValue)
+  }
+  
   func getUrlWithServicePrefix() -> URL {
     var url =  baseUrl
                 .appendingPathComponent(apiPathComponent)
                 .appendingPathComponent(version.rawValue)
-    
-    // TODO: - ДА ДА ЭТО КОСТЫЛЬ, НУ ЧТО ПОДЕЛАТЬ БЕЗ ЭТОГО НИКУДА
-    if isMyRequest {
-      url = url.appendingPathComponent(myServicePathComponent)
-    }
     
     url = url.appendingPathComponent(servicePathComponent)
     

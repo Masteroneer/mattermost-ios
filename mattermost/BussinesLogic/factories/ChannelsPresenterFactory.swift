@@ -14,6 +14,8 @@ final class ChannelsPresenterFactory: BasePresenterFactoryProtocol {
                           baseInputParams: BaseInputParamsProtocol?) -> BasePresenterProtocol {
     let presenter = ChannelsMVPPresenter(baseView: baseView, baseRouter: baseRouter, inputParams: baseInputParams)
     presenter.teamsService = Utils.shared.createService(serviceType: TeamsService.self)
+    presenter.channelsService = Utils.shared.createService(serviceType: ChannelsService.self)
+    presenter.postsService = Utils.shared.createService(serviceType: PostsService.self)
     return presenter
   }
 }

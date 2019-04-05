@@ -22,7 +22,7 @@ final class UsersService: BaseService, UsersServiceProtocol {
              completion: @escaping (ApiResult<UserModel, ErrorModel>) -> Void) {
     
     let parameters: Parameters = ["login_id": loginId, "password": password]
-    let dataRequest = request(methodPathComponent: "login",
+    let dataRequest = request(methodPathComponent: "users/login",
                               method: .post,
                               headers: nil,
                               parameters: parameters,
@@ -45,7 +45,7 @@ final class UsersService: BaseService, UsersServiceProtocol {
   }
   
   func getMe(completion: @escaping (ApiResult<UserModel, ErrorModel>) -> Void) {
-    self.serializableAuthorizedRequest(methodPathComponent: "me",
+    self.serializableAuthorizedRequest(methodPathComponent: "users/me",
                                        method: .get,
                                        parameters: nil,
                                        completion: completion)

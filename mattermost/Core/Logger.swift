@@ -12,12 +12,17 @@ class Logger {
   static var shared = Logger()
   
   func printd(group: String, _ items: Any...) {
-    printd(group, items)
+    printd("===============================")
+    var str = ""
+    for item in items {
+      str += "\(item)"
+    }
+    printd("\(group) \(str)")
   }
   
-  func printd(_ items: Any...) {
+  func printd(_ object: Any) {
     #if DEBUG
-    print(items)
+    print(object)
     #endif
   }
 }

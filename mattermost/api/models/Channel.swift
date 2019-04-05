@@ -18,7 +18,7 @@ struct ChannelModel: Codable {
   var purpose: String
   var lastPostAt: Int
   var totalMsgCount: Int
-  var createrId: Int
+  var creatorId: String
   
   enum CodingKeys: String, CodingKey {
     case id
@@ -30,6 +30,6 @@ struct ChannelModel: Codable {
     case purpose
     case lastPostAt = "last_post_at"
     case totalMsgCount = "total_msg_count"
-    case createrId = "creater_id"
+    case creatorId = "creator_id"
   }
 }

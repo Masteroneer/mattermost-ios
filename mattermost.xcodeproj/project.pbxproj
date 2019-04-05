@@ -39,6 +39,8 @@
 		98FB420F2238DDE600569143 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98FB420E2238DDE600569143 /* LoginViewController.xib */; };
 		98FB42112238E6E300569143 /* WebSocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FB42102238E6E300569143 /* WebSocketService.swift */; };
 		CE4E34EF22435C430045C4E5 /* LoggerAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E34EE22435C430045C4E5 /* LoggerAppDelegate.swift */; };
+		CE7592542255E2CE0069D786 /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7592532255E2CE0069D786 /* ChannelCell.swift */; };
+		CE7592562255E2F60069D786 /* ChannelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7592552255E2F60069D786 /* ChannelCell.xib */; };
 		CE7840F722533357006E14DB /* ChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7840F622533356006E14DB /* ChannelsViewController.swift */; };
 		CE7840F92253338B006E14DB /* ChannelsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7840F82253338A006E14DB /* ChannelsViewController.xib */; };
 		CE7840FB225333A6006E14DB /* ChannelsAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7840FA225333A6006E14DB /* ChannelsAssembler.swift */; };
@@ -54,6 +56,13 @@
 		CE8965872249FC73001D7B41 /* ApiResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8965862249FC73001D7B41 /* ApiResult.swift */; };
 		CE896589224A0E6A001D7B41 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE896588224A0E6A001D7B41 /* Logger.swift */; };
 		CE89658C224A196C001D7B41 /* TeamService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89658B224A196C001D7B41 /* TeamService.swift */; };
+		CEA8F05D2257251700881513 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8F05C2257251700881513 /* NibLoadable.swift */; };
+		CEA8F05F2257252300881513 /* NibOwnerLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8F05E2257252300881513 /* NibOwnerLoadable.swift */; };
+		CEA8F0612257252900881513 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8F0602257252900881513 /* Reusable.swift */; };
+		CEA8F0632257252E00881513 /* UICollectionView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8F0622257252E00881513 /* UICollectionView+Reusable.swift */; };
+		CEA8F0672257253A00881513 /* UITableView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8F0662257253A00881513 /* UITableView+Reusable.swift */; };
+		CEA8F06922572D0C00881513 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8F06822572D0C00881513 /* Post.swift */; };
+		CEA8F06B22572F8400881513 /* PostsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8F06A22572F8400881513 /* PostsService.swift */; };
 		CEF746A8224DF56700A40471 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF746A7224DF56700A40471 /* Team.swift */; };
 		DDC2645322241F2400513411 /* UsersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC2645222241F2400513411 /* UsersService.swift */; };
 		DDDC531C22158BCF0032A9A3 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDC531B22158BCF0032A9A3 /* BaseService.swift */; };
@@ -96,6 +105,8 @@
 		A28DF2302C186CA30FDB9013 /* Pods_mattermost.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mattermost.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAF125BC5342248BDCA1E630 /* Pods-mattermost.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mattermost.release.xcconfig"; path = "Pods/Target Support Files/Pods-mattermost/Pods-mattermost.release.xcconfig"; sourceTree = "<group>"; };
 		CE4E34EE22435C430045C4E5 /* LoggerAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerAppDelegate.swift; sourceTree = "<group>"; };
+		CE7592532255E2CE0069D786 /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
+		CE7592552255E2F60069D786 /* ChannelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelCell.xib; sourceTree = "<group>"; };
 		CE7840F622533356006E14DB /* ChannelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsViewController.swift; sourceTree = "<group>"; };
 		CE7840F82253338A006E14DB /* ChannelsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelsViewController.xib; sourceTree = "<group>"; };
 		CE7840FA225333A6006E14DB /* ChannelsAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsAssembler.swift; sourceTree = "<group>"; };
@@ -111,6 +122,13 @@
 		CE8965862249FC73001D7B41 /* ApiResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResult.swift; sourceTree = "<group>"; };
 		CE896588224A0E6A001D7B41 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		CE89658B224A196C001D7B41 /* TeamService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamService.swift; sourceTree = "<group>"; };
+		CEA8F05C2257251700881513 /* NibLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
+		CEA8F05E2257252300881513 /* NibOwnerLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibOwnerLoadable.swift; sourceTree = "<group>"; };
+		CEA8F0602257252900881513 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		CEA8F0622257252E00881513 /* UICollectionView+Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Reusable.swift"; sourceTree = "<group>"; };
+		CEA8F0662257253A00881513 /* UITableView+Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Reusable.swift"; sourceTree = "<group>"; };
+		CEA8F06822572D0C00881513 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		CEA8F06A22572F8400881513 /* PostsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsService.swift; sourceTree = "<group>"; };
 		CEF746A7224DF56700A40471 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		DDC2645222241F2400513411 /* UsersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersService.swift; sourceTree = "<group>"; };
 		DDDC531B22158BCF0032A9A3 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
@@ -160,6 +178,7 @@
 				CE7EA71E2248C93C0064F342 /* Error.swift */,
 				CEF746A7224DF56700A40471 /* Team.swift */,
 				CE78410A22534E27006E14DB /* Channel.swift */,
+				CEA8F06822572D0C00881513 /* Post.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -171,6 +190,7 @@
 				DDC2645222241F2400513411 /* UsersService.swift */,
 				98FB42102238E6E300569143 /* WebSocketService.swift */,
 				CE78410822534C3B006E14DB /* ChannelsService.swift */,
+				CEA8F06A22572F8400881513 /* PostsService.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -293,6 +313,7 @@
 		98FB42072238D73E00569143 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				CEA8F043225724C400881513 /* Reusable */,
 				CE78410522534109006E14DB /* Utils */,
 				CE89006E22423A7C0009D970 /* AppDelgates */,
 				98DC742E2240BFD90064EB38 /* module */,
@@ -357,8 +378,22 @@
 				CE7840F82253338A006E14DB /* ChannelsViewController.xib */,
 				CE7840FA225333A6006E14DB /* ChannelsAssembler.swift */,
 				CE78410022533B0B006E14DB /* ChannelsPresenterProtocol.swift */,
+				CE7592532255E2CE0069D786 /* ChannelCell.swift */,
+				CE7592552255E2F60069D786 /* ChannelCell.xib */,
 			);
 			path = Channels;
+			sourceTree = "<group>";
+		};
+		CEA8F043225724C400881513 /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+				CEA8F05C2257251700881513 /* NibLoadable.swift */,
+				CEA8F05E2257252300881513 /* NibOwnerLoadable.swift */,
+				CEA8F0602257252900881513 /* Reusable.swift */,
+				CEA8F0662257253A00881513 /* UITableView+Reusable.swift */,
+				CEA8F0622257252E00881513 /* UICollectionView+Reusable.swift */,
+			);
+			path = Reusable;
 			sourceTree = "<group>";
 		};
 		DDDC531A22158BBF0032A9A3 /* api */ = {
@@ -437,6 +472,7 @@
 				CE7840F92253338B006E14DB /* ChannelsViewController.xib in Resources */,
 				98E8E66A221553EA00F13355 /* LaunchScreen.storyboard in Resources */,
 				98E8E667221553EA00F13355 /* Assets.xcassets in Resources */,
+				CE7592562255E2F60069D786 /* ChannelCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +539,7 @@
 				CE896589224A0E6A001D7B41 /* Logger.swift in Sources */,
 				9860B825223F8FA900132666 /* UIViewController+TransitionHandler.swift in Sources */,
 				980064D0223FECF00001B4DC /* LoginTheme.swift in Sources */,
+				CEA8F0632257252E00881513 /* UICollectionView+Reusable.swift in Sources */,
 				CE8965872249FC73001D7B41 /* ApiResult.swift in Sources */,
 				98B51AB8223B7F51003325FA /* BasePresenter.swift in Sources */,
 				CE78410922534C3B006E14DB /* ChannelsService.swift in Sources */,
@@ -510,6 +547,7 @@
 				9860B827223F8FB700132666 /* TransitionHandler.swift in Sources */,
 				980064CA223FEC240001B4DC /* LoginMVPPresenter.swift in Sources */,
 				CE7840FD225334DA006E14DB /* BaseThemeFactory.swift in Sources */,
+				CEA8F0612257252900881513 /* Reusable.swift in Sources */,
 				98B51AB6223B7F47003325FA /* BaseView.swift in Sources */,
 				CE78410B22534E27006E14DB /* Channel.swift in Sources */,
 				9860B822223F858400132666 /* BaseRouter.swift in Sources */,
@@ -517,6 +555,8 @@
 				CE89007022423AA80009D970 /* StartScreenAppDelegate.swift in Sources */,
 				CE7840FB225333A6006E14DB /* ChannelsAssembler.swift in Sources */,
 				98D20C7522378F5D0093E094 /* InputServerViewController.swift in Sources */,
+				CEA8F06922572D0C00881513 /* Post.swift in Sources */,
+				CE7592542255E2CE0069D786 /* ChannelCell.swift in Sources */,
 				CE78410722534116006E14DB /* Utils.swift in Sources */,
 				CE7EA71F2248C93C0064F342 /* Error.swift in Sources */,
 				98B51ABC223BA72A003325FA /* InputServerTheme.swift in Sources */,
@@ -524,14 +564,18 @@
 				9860B820223F726C00132666 /* BaseViewController.swift in Sources */,
 				DDC2645322241F2400513411 /* UsersService.swift in Sources */,
 				CE78410422533C34006E14DB /* ChannelsMVPPresenter.swift in Sources */,
+				CEA8F05F2257252300881513 /* NibOwnerLoadable.swift in Sources */,
+				CEA8F06B22572F8400881513 /* PostsService.swift in Sources */,
 				CE4E34EF22435C430045C4E5 /* LoggerAppDelegate.swift in Sources */,
 				98FB42112238E6E300569143 /* WebSocketService.swift in Sources */,
 				980064CE223FEC980001B4DC /* LoginAssembler.swift in Sources */,
 				CE89658C224A196C001D7B41 /* TeamService.swift in Sources */,
+				CEA8F05D2257251700881513 /* NibLoadable.swift in Sources */,
 				CEF746A8224DF56700A40471 /* Team.swift in Sources */,
 				98B51AA7223B7886003325FA /* User.swift in Sources */,
 				CE7840F722533357006E14DB /* ChannelsViewController.swift in Sources */,
 				98FB420A2238D7C900569143 /* ServerUrlsService.swift in Sources */,
+				CEA8F0672257253A00881513 /* UITableView+Reusable.swift in Sources */,
 				980064CC223FEC320001B4DC /* LoginPresenterFactory.swift in Sources */,
 				98B51AAA223B7A7E003325FA /* InputServerAssembler.swift in Sources */,
 				CE78410122533B0B006E14DB /* ChannelsPresenterProtocol.swift in Sources */,

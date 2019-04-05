@@ -17,17 +17,14 @@ final class TeamsService: BaseService, TeamsServiceProtocol {
   override var servicePathComponent: String { return "teams" }
   
   func getTeams(completion: @escaping (ApiResult<[TeamModel], ErrorModel>) -> Void) {
-    isMyRequest = false
-    serializableAuthorizedRequest(methodPathComponent: nil,
+    serializableAuthorizedRequest(methodPathComponent: "teams",
                                   method: .get,
                                   parameters: nil,
                                   completion: completion)
   }
   
   func getMyTeams(completion: @escaping (ApiResult<[TeamModel], ErrorModel>) -> Void) {
-    isMyRequest = true
-    // TODO: - ДА ДА КОСТЫЛЬ НА КОСТЫЛЕ
-    serializableAuthorizedRequest(methodPathComponent: nil,
+    serializableAuthorizedRequest(methodPathComponent: "users/me/teams",
                                   method: .get,
                                   parameters: nil,
                                   completion: completion)

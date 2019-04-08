@@ -63,6 +63,8 @@
 		CEA8F0672257253A00881513 /* UITableView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8F0662257253A00881513 /* UITableView+Reusable.swift */; };
 		CEA8F06922572D0C00881513 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8F06822572D0C00881513 /* Post.swift */; };
 		CEA8F06B22572F8400881513 /* PostsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8F06A22572F8400881513 /* PostsService.swift */; };
+		CEA8F06E22573CCB00881513 /* RoundedViewWithLetter.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA8F06D22573CCB00881513 /* RoundedViewWithLetter.xib */; };
+		CEA8F07022573CD900881513 /* RoundedViewWithLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8F06F22573CD900881513 /* RoundedViewWithLetter.swift */; };
 		CEF746A8224DF56700A40471 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF746A7224DF56700A40471 /* Team.swift */; };
 		DDC2645322241F2400513411 /* UsersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC2645222241F2400513411 /* UsersService.swift */; };
 		DDDC531C22158BCF0032A9A3 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDC531B22158BCF0032A9A3 /* BaseService.swift */; };
@@ -129,6 +131,8 @@
 		CEA8F0662257253A00881513 /* UITableView+Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Reusable.swift"; sourceTree = "<group>"; };
 		CEA8F06822572D0C00881513 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		CEA8F06A22572F8400881513 /* PostsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsService.swift; sourceTree = "<group>"; };
+		CEA8F06D22573CCB00881513 /* RoundedViewWithLetter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoundedViewWithLetter.xib; sourceTree = "<group>"; };
+		CEA8F06F22573CD900881513 /* RoundedViewWithLetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedViewWithLetter.swift; sourceTree = "<group>"; };
 		CEF746A7224DF56700A40471 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		DDC2645222241F2400513411 /* UsersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersService.swift; sourceTree = "<group>"; };
 		DDDC531B22158BCF0032A9A3 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
@@ -313,6 +317,7 @@
 		98FB42072238D73E00569143 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				CEA8F06C22573CAD00881513 /* Views */,
 				CEA8F043225724C400881513 /* Reusable */,
 				CE78410522534109006E14DB /* Utils */,
 				CE89006E22423A7C0009D970 /* AppDelgates */,
@@ -396,6 +401,23 @@
 			path = Reusable;
 			sourceTree = "<group>";
 		};
+		CEA8F06C22573CAD00881513 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CEA8F07122573CDD00881513 /* RoundedViewWithLetter */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CEA8F07122573CDD00881513 /* RoundedViewWithLetter */ = {
+			isa = PBXGroup;
+			children = (
+				CEA8F06D22573CCB00881513 /* RoundedViewWithLetter.xib */,
+				CEA8F06F22573CD900881513 /* RoundedViewWithLetter.swift */,
+			);
+			path = RoundedViewWithLetter;
+			sourceTree = "<group>";
+		};
 		DDDC531A22158BBF0032A9A3 /* api */ = {
 			isa = PBXGroup;
 			children = (
@@ -467,6 +489,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA8F06E22573CCB00881513 /* RoundedViewWithLetter.xib in Resources */,
 				98FB420F2238DDE600569143 /* LoginViewController.xib in Resources */,
 				98FB42062238D22D00569143 /* InputServerViewController.xib in Resources */,
 				CE7840F92253338B006E14DB /* ChannelsViewController.xib in Resources */,
@@ -557,6 +580,7 @@
 				98D20C7522378F5D0093E094 /* InputServerViewController.swift in Sources */,
 				CEA8F06922572D0C00881513 /* Post.swift in Sources */,
 				CE7592542255E2CE0069D786 /* ChannelCell.swift in Sources */,
+				CEA8F07022573CD900881513 /* RoundedViewWithLetter.swift in Sources */,
 				CE78410722534116006E14DB /* Utils.swift in Sources */,
 				CE7EA71F2248C93C0064F342 /* Error.swift in Sources */,
 				98B51ABC223BA72A003325FA /* InputServerTheme.swift in Sources */,

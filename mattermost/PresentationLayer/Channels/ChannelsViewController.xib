@@ -34,6 +34,7 @@
                 <constraint firstItem="END-eI-Hrx" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="eqx-kN-HvX"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="135" y="164"/>
         </view>
     </objects>
 </document>

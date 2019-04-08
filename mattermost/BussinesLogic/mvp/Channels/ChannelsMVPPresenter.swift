@@ -34,7 +34,7 @@ final class ChannelsMVPPresenter: BasePresenter, ChannelsPresenterProtocol {
   // MARK: - private methods
   
   private func onSuccess(teams: [TeamModel]) {
-    channelsService?.getMyPublicChannels(teamId: teams[0].id, completion: { [weak self] (result) in
+    channelsService?.getMyChannels(teamId: teams[0].id, completion: { [weak self] (result) in
       guard let strongSelf = self else { return }
       
       switch result {
@@ -58,7 +58,7 @@ final class ChannelsMVPPresenter: BasePresenter, ChannelsPresenterProtocol {
   private func getPosts(for channelId: String) {
     postsService?.getPosts(for: channelId, completion: { [weak self] (result) in
       guard let strongSelf = self else { return }
-      
+
       switch result {
       case .success(let posts):
         strongSelf.posts.append(posts)
@@ -83,7 +83,9 @@ final class ChannelsMVPPresenter: BasePresenter, ChannelsPresenterProtocol {
         displayChannels.append(displayChannel)
       }
     }
-    
+    displayChannels.sort { (lChannelViewData, rChannelViewData) -> Bool in
+      return lChannelViewData.name < rChannelViewData.name
+    }
     view?.updateDisplayChannels(displayChannels)
   }
 }

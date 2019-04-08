@@ -112,8 +112,10 @@ class BaseService: BaseServiceProtocol {
         let model = try JSONDecoder().decode(Model.self, from: resData)
         completion(.success(model))
       } catch {
-        let model = try! JSONDecoder().decode(ErrorModel.self, from: resData)
-        completion(.failure(model))
+        do {
+          let model = try JSONDecoder().decode(ErrorModel.self, from: resData)
+          completion(.failure(model))
+        } catch {}
       }
     }
   }

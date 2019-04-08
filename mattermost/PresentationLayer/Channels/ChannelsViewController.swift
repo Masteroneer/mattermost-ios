@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct ChannelViewData {
+struct ChannelViewData: Equatable {
   var name: String
   var lastMessage: String
 }
@@ -25,7 +25,13 @@ final class ChannelsViewController: BaseViewController, ChannelsViewProtocol, UI
   @IBOutlet weak var tableView: UITableView!
   
   private var presenter: ChannelsPresenterProtocol? { return basePresenter as? ChannelsPresenterProtocol }
-  private var channels: [ChannelViewData] = []
+  private var channels: [ChannelViewData] = [
+    ChannelViewData(name: "Some Channel Name", lastMessage: "Vsem privet"),
+    ChannelViewData(name: "Some Channel Name", lastMessage: "Vsem privet"),
+    ChannelViewData(name: "Some Channel Name", lastMessage: "Vsem privet"),
+    ChannelViewData(name: "Some Channel Name", lastMessage: "Vsem privet"),
+    ChannelViewData(name: "Some Channel Name", lastMessage: "Vsem privet")
+  ]
   
   // MARK: - Life cycle
   
@@ -45,8 +51,11 @@ final class ChannelsViewController: BaseViewController, ChannelsViewProtocol, UI
   
   func updateDisplayChannels(_ channels: [ChannelViewData]) {
     self.channels = channels
-    
     tableView.reloadData()
+//    let changeset = StagedChangeset.init
+//    tableView.reload(using: changeset) { channels in
+//      self.channels = channels
+//    }
   }
   
   // MARK: - UITableView methods

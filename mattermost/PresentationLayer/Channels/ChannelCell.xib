@@ -19,17 +19,34 @@
                 <rect key="frame" x="0.0" y="0.0" width="390" height="79.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="MGv-18-b8y">
-                        <rect key="frame" x="20" y="5" width="370" height="69.5"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k9D-7u-mC9">
+                        <rect key="frame" x="10" y="10" width="50" height="50"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="352-1k-aMf" customClass="RoundedViewWithLetter" customModule="mattermost" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="352-1k-aMf" secondAttribute="trailing" id="DCQ-3Z-ofc"/>
+                            <constraint firstItem="352-1k-aMf" firstAttribute="leading" secondItem="k9D-7u-mC9" secondAttribute="leading" id="F74-FT-5M8"/>
+                            <constraint firstAttribute="height" constant="50" id="NcX-ta-Bdx"/>
+                            <constraint firstItem="352-1k-aMf" firstAttribute="top" secondItem="k9D-7u-mC9" secondAttribute="top" id="c5e-1f-Poa"/>
+                            <constraint firstAttribute="bottom" secondItem="352-1k-aMf" secondAttribute="bottom" id="gZY-UQ-nV4"/>
+                            <constraint firstAttribute="width" constant="50" id="tH3-vv-Vy9"/>
+                        </constraints>
+                    </view>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="MGv-18-b8y">
+                        <rect key="frame" x="70" y="5" width="310" height="69.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OgJ-ag-Ixl">
-                                <rect key="frame" x="0.0" y="0.0" width="370" height="49"/>
+                                <rect key="frame" x="0.0" y="0.0" width="310" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxb-IW-HYE">
-                                <rect key="frame" x="0.0" y="49" width="370" height="20.5"/>
+                                <rect key="frame" x="0.0" y="35" width="310" height="34.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -39,17 +56,21 @@
                     </stackView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="k9D-7u-mC9" firstAttribute="top" secondItem="fbH-IH-FOv" secondAttribute="top" constant="10" id="505-bP-az8"/>
+                    <constraint firstItem="k9D-7u-mC9" firstAttribute="leading" secondItem="fbH-IH-FOv" secondAttribute="leading" constant="10" id="EF2-cL-V41"/>
                     <constraint firstAttribute="bottom" secondItem="MGv-18-b8y" secondAttribute="bottom" constant="5" id="JDr-FB-hh5"/>
-                    <constraint firstAttribute="trailing" secondItem="MGv-18-b8y" secondAttribute="trailing" id="OAg-ag-XM5"/>
+                    <constraint firstAttribute="trailing" secondItem="MGv-18-b8y" secondAttribute="trailing" constant="10" id="OAg-ag-XM5"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="k9D-7u-mC9" secondAttribute="bottom" constant="10" id="Tew-1c-T5O"/>
                     <constraint firstItem="MGv-18-b8y" firstAttribute="top" secondItem="fbH-IH-FOv" secondAttribute="top" constant="5" id="dy2-nX-U0r"/>
-                    <constraint firstItem="MGv-18-b8y" firstAttribute="leading" secondItem="fbH-IH-FOv" secondAttribute="leading" constant="20" id="p2j-2F-PLg"/>
+                    <constraint firstItem="MGv-18-b8y" firstAttribute="leading" secondItem="k9D-7u-mC9" secondAttribute="trailing" constant="10" id="rzu-b8-PKq"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="lastPostMessage" destination="nxb-IW-HYE" id="rnd-7l-NJM"/>
                 <outlet property="name" destination="OgJ-ag-Ixl" id="wQn-9X-Hxw"/>
+                <outlet property="roundedViewWithLetter" destination="352-1k-aMf" id="PCe-Sn-NNu"/>
             </connections>
-            <point key="canvasLocation" x="-73.599999999999994" y="228.48575712143929"/>
+            <point key="canvasLocation" x="-174" y="243"/>
         </tableViewCell>
     </objects>
 </document>

@@ -15,10 +15,12 @@ struct ChannelCellData {
 }
 
 final class ChannelCell: UITableViewCell, NibLoadable {
+  @IBOutlet weak var roundedViewWithLetter: RoundedViewWithLetter!
   @IBOutlet weak var name: UILabel!
   @IBOutlet weak var lastPostMessage: UILabel!
   
   func update(with data: ChannelCellData) {
+    roundedViewWithLetter.label.text = String(data.name.first ?? "A").uppercased()
     name.text = data.name
     lastPostMessage.text = data.lastMessage
   }

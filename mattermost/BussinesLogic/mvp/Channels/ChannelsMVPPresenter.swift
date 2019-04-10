@@ -70,7 +70,7 @@ final class ChannelsMVPPresenter: BasePresenter, ChannelsPresenterProtocol {
   }
   
   private func updateDisplayChannels() {
-    var displayChannels = [ChannelViewData]()
+    var displayChannels = [Channel]()
     
     posts.forEach { (post) in
       let channel = channels.first(where: { (channel) -> Bool in
@@ -79,13 +79,15 @@ final class ChannelsMVPPresenter: BasePresenter, ChannelsPresenterProtocol {
       
       if let channelDisplayName = channel?.displayName,
         !channelDisplayName.isEmpty {
-        let displayChannel = ChannelViewData(name: channelDisplayName, lastMessage: post.posts.first!.value.message)
+        let displayChannel = Channel(name: channelDisplayName, type: .public, lastMessage: post.posts.first!.value.message)
         displayChannels.append(displayChannel)
       }
     }
     displayChannels.sort { (lChannelViewData, rChannelViewData) -> Bool in
       return lChannelViewData.name < rChannelViewData.name
     }
-    view?.updateDisplayChannels(displayChannels)
+    for channel in displayChannels {
+      view?.display(channel: channel)
+    }
   }
 }

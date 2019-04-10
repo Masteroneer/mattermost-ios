@@ -14,9 +14,6 @@ target 'mattermost' do
 
   # View
   pod 'SnapKit'
-  
-  # Logging
-  pod 'SwiftyBeaver'
 
   pod 'RamblerAppDelegateProxy'
 end

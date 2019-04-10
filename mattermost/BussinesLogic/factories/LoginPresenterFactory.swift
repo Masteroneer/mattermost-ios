@@ -15,4 +15,10 @@ final class LoginPresenterFactory: BasePresenterFactoryProtocol {
     
     return LoginMVPPresenter(baseView: baseView, baseRouter: baseRouter, inputParams: baseInputParams)
   }
+  
+  func createMockPresenter(baseView: BaseViewProtocol,
+                           baseRouter: BasePresenterRouterProtocol,
+                           baseInputParams: BaseInputParamsProtocol?) -> BasePresenterProtocol {
+    return createMVPPresenter(baseView: baseView, baseRouter: baseRouter, baseInputParams: baseInputParams)
+  }
 }

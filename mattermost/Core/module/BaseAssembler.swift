@@ -25,7 +25,12 @@ extension BaseAssemblerProtocol {
     
     // presenter
     let presenterFactoryInstance = presenterFactory.init()
-    let presenterInstance = presenterFactoryInstance.createMVPPresenter(baseView: view, baseRouter: routerInstance, baseInputParams: inputParams)
+//    let presenterInstance = presenterFactoryInstance.createMVPPresenter(baseView: view,
+//                                                                        baseRouter: routerInstance,
+//                                                                        baseInputParams: inputParams)
+    let presenterInstance = presenterFactoryInstance.createMockPresenter(baseView: view,
+                                                                         baseRouter: routerInstance,
+                                                                         baseInputParams: inputParams)
     
     // view
     view.basePresenter = presenterInstance

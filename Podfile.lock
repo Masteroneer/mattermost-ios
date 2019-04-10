@@ -8,7 +8,6 @@ PODS:
     - Realm (= 3.13.1)
   - SnapKit (4.2.0)
   - Starscream (3.0.6)
-  - SwiftyBeaver (1.6.2)
 
 DEPENDENCIES:
   - Alamofire
@@ -16,7 +15,6 @@ DEPENDENCIES:
   - RealmSwift
   - SnapKit
   - Starscream
-  - SwiftyBeaver
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -26,7 +24,6 @@ SPEC REPOS:
     - RealmSwift
     - SnapKit
     - Starscream
-    - SwiftyBeaver
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
@@ -35,8 +32,7 @@ SPEC CHECKSUMS:
   RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
-  SwiftyBeaver: 8e67ab3cd94389cbbb7a9c7cc02748d98bfee68e
 
-PODFILE CHECKSUM: 0705a3b54f4790aa5d7df93e1743c3a1cffcfe25
+PODFILE CHECKSUM: 5ec28d6a868b365591c95d1e763a1a411ca337cb
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.6.0

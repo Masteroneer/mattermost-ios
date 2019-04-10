@@ -39,8 +39,8 @@
 		98FB420F2238DDE600569143 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98FB420E2238DDE600569143 /* LoginViewController.xib */; };
 		98FB42112238E6E300569143 /* WebSocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FB42102238E6E300569143 /* WebSocketService.swift */; };
 		CE4E34EF22435C430045C4E5 /* LoggerAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E34EE22435C430045C4E5 /* LoggerAppDelegate.swift */; };
-		CE7592542255E2CE0069D786 /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7592532255E2CE0069D786 /* ChannelCell.swift */; };
-		CE7592562255E2F60069D786 /* ChannelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7592552255E2F60069D786 /* ChannelCell.xib */; };
+		CE7592542255E2CE0069D786 /* ChannelsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7592532255E2CE0069D786 /* ChannelsCell.swift */; };
+		CE7592562255E2F60069D786 /* ChannelsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7592552255E2F60069D786 /* ChannelsCell.xib */; };
 		CE7840F722533357006E14DB /* ChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7840F622533356006E14DB /* ChannelsViewController.swift */; };
 		CE7840F92253338B006E14DB /* ChannelsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7840F82253338A006E14DB /* ChannelsViewController.xib */; };
 		CE7840FB225333A6006E14DB /* ChannelsAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7840FA225333A6006E14DB /* ChannelsAssembler.swift */; };
@@ -66,6 +66,9 @@
 		CEA8F06E22573CCB00881513 /* RoundedViewWithLetter.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA8F06D22573CCB00881513 /* RoundedViewWithLetter.xib */; };
 		CEA8F07022573CD900881513 /* RoundedViewWithLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8F06F22573CD900881513 /* RoundedViewWithLetter.swift */; };
 		CEF746A8224DF56700A40471 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF746A7224DF56700A40471 /* Team.swift */; };
+		DD972727225E075D003DF502 /* ChannelsMockPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD972726225E075D003DF502 /* ChannelsMockPresenter.swift */; };
+		DD972729225E173F003DF502 /* ChannelsHeaderSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD972728225E173F003DF502 /* ChannelsHeaderSection.xib */; };
+		DD97272B225E1753003DF502 /* ChannelsHeaderSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD97272A225E1753003DF502 /* ChannelsHeaderSection.swift */; };
 		DDC2645322241F2400513411 /* UsersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC2645222241F2400513411 /* UsersService.swift */; };
 		DDDC531C22158BCF0032A9A3 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDC531B22158BCF0032A9A3 /* BaseService.swift */; };
 /* End PBXBuildFile section */
@@ -107,8 +110,8 @@
 		A28DF2302C186CA30FDB9013 /* Pods_mattermost.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mattermost.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAF125BC5342248BDCA1E630 /* Pods-mattermost.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mattermost.release.xcconfig"; path = "Pods/Target Support Files/Pods-mattermost/Pods-mattermost.release.xcconfig"; sourceTree = "<group>"; };
 		CE4E34EE22435C430045C4E5 /* LoggerAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerAppDelegate.swift; sourceTree = "<group>"; };
-		CE7592532255E2CE0069D786 /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
-		CE7592552255E2F60069D786 /* ChannelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelCell.xib; sourceTree = "<group>"; };
+		CE7592532255E2CE0069D786 /* ChannelsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsCell.swift; sourceTree = "<group>"; };
+		CE7592552255E2F60069D786 /* ChannelsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelsCell.xib; sourceTree = "<group>"; };
 		CE7840F622533356006E14DB /* ChannelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsViewController.swift; sourceTree = "<group>"; };
 		CE7840F82253338A006E14DB /* ChannelsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelsViewController.xib; sourceTree = "<group>"; };
 		CE7840FA225333A6006E14DB /* ChannelsAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsAssembler.swift; sourceTree = "<group>"; };
@@ -134,6 +137,9 @@
 		CEA8F06D22573CCB00881513 /* RoundedViewWithLetter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoundedViewWithLetter.xib; sourceTree = "<group>"; };
 		CEA8F06F22573CD900881513 /* RoundedViewWithLetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedViewWithLetter.swift; sourceTree = "<group>"; };
 		CEF746A7224DF56700A40471 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		DD972726225E075D003DF502 /* ChannelsMockPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsMockPresenter.swift; sourceTree = "<group>"; };
+		DD972728225E173F003DF502 /* ChannelsHeaderSection.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelsHeaderSection.xib; sourceTree = "<group>"; };
+		DD97272A225E1753003DF502 /* ChannelsHeaderSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsHeaderSection.swift; sourceTree = "<group>"; };
 		DDC2645222241F2400513411 /* UsersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersService.swift; sourceTree = "<group>"; };
 		DDDC531B22158BCF0032A9A3 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -210,6 +216,7 @@
 		98B51AAB223B7A9C003325FA /* BussinesLogic */ = {
 			isa = PBXGroup;
 			children = (
+				DD972725225E0743003DF502 /* mockPresenters */,
 				98DC74242240BBD10064EB38 /* factories */,
 				98B51AAC223B7AAE003325FA /* mvp */,
 			);
@@ -383,8 +390,8 @@
 				CE7840F82253338A006E14DB /* ChannelsViewController.xib */,
 				CE7840FA225333A6006E14DB /* ChannelsAssembler.swift */,
 				CE78410022533B0B006E14DB /* ChannelsPresenterProtocol.swift */,
-				CE7592532255E2CE0069D786 /* ChannelCell.swift */,
-				CE7592552255E2F60069D786 /* ChannelCell.xib */,
+				DD97272C225E1937003DF502 /* ChannelsCell */,
+				DD97272D225E1945003DF502 /* ChannelsHeaderSection */,
 			);
 			path = Channels;
 			sourceTree = "<group>";
@@ -416,6 +423,32 @@
 				CEA8F06F22573CD900881513 /* RoundedViewWithLetter.swift */,
 			);
 			path = RoundedViewWithLetter;
+			sourceTree = "<group>";
+		};
+		DD972725225E0743003DF502 /* mockPresenters */ = {
+			isa = PBXGroup;
+			children = (
+				DD972726225E075D003DF502 /* ChannelsMockPresenter.swift */,
+			);
+			path = mockPresenters;
+			sourceTree = "<group>";
+		};
+		DD97272C225E1937003DF502 /* ChannelsCell */ = {
+			isa = PBXGroup;
+			children = (
+				CE7592532255E2CE0069D786 /* ChannelsCell.swift */,
+				CE7592552255E2F60069D786 /* ChannelsCell.xib */,
+			);
+			path = ChannelsCell;
+			sourceTree = "<group>";
+		};
+		DD97272D225E1945003DF502 /* ChannelsHeaderSection */ = {
+			isa = PBXGroup;
+			children = (
+				DD97272A225E1753003DF502 /* ChannelsHeaderSection.swift */,
+				DD972728225E173F003DF502 /* ChannelsHeaderSection.xib */,
+			);
+			path = ChannelsHeaderSection;
 			sourceTree = "<group>";
 		};
 		DDDC531A22158BBF0032A9A3 /* api */ = {
@@ -489,13 +522,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD972729225E173F003DF502 /* ChannelsHeaderSection.xib in Resources */,
 				CEA8F06E22573CCB00881513 /* RoundedViewWithLetter.xib in Resources */,
 				98FB420F2238DDE600569143 /* LoginViewController.xib in Resources */,
 				98FB42062238D22D00569143 /* InputServerViewController.xib in Resources */,
 				CE7840F92253338B006E14DB /* ChannelsViewController.xib in Resources */,
 				98E8E66A221553EA00F13355 /* LaunchScreen.storyboard in Resources */,
 				98E8E667221553EA00F13355 /* Assets.xcassets in Resources */,
-				CE7592562255E2F60069D786 /* ChannelCell.xib in Resources */,
+				CE7592562255E2F60069D786 /* ChannelsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,7 +567,6 @@
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -543,7 +576,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -579,7 +611,7 @@
 				CE7840FB225333A6006E14DB /* ChannelsAssembler.swift in Sources */,
 				98D20C7522378F5D0093E094 /* InputServerViewController.swift in Sources */,
 				CEA8F06922572D0C00881513 /* Post.swift in Sources */,
-				CE7592542255E2CE0069D786 /* ChannelCell.swift in Sources */,
+				CE7592542255E2CE0069D786 /* ChannelsCell.swift in Sources */,
 				CEA8F07022573CD900881513 /* RoundedViewWithLetter.swift in Sources */,
 				CE78410722534116006E14DB /* Utils.swift in Sources */,
 				CE7EA71F2248C93C0064F342 /* Error.swift in Sources */,
@@ -587,7 +619,9 @@
 				98B51AAF223B7AD2003325FA /* InputServerMVPPresenter.swift in Sources */,
 				9860B820223F726C00132666 /* BaseViewController.swift in Sources */,
 				DDC2645322241F2400513411 /* UsersService.swift in Sources */,
+				DD972727225E075D003DF502 /* ChannelsMockPresenter.swift in Sources */,
 				CE78410422533C34006E14DB /* ChannelsMVPPresenter.swift in Sources */,
+				DD97272B225E1753003DF502 /* ChannelsHeaderSection.swift in Sources */,
 				CEA8F05F2257252300881513 /* NibOwnerLoadable.swift in Sources */,
 				CEA8F06B22572F8400881513 /* PostsService.swift in Sources */,
 				CE4E34EF22435C430045C4E5 /* LoggerAppDelegate.swift in Sources */,

@@ -16,4 +16,10 @@ final class InputServerPresenterFactory: BasePresenterFactoryProtocol {
     presenter.serverUrlsService = ServerUrlsService()
     return presenter
   }
+  
+  func createMockPresenter(baseView: BaseViewProtocol,
+                           baseRouter: BasePresenterRouterProtocol,
+                           baseInputParams: BaseInputParamsProtocol?) -> BasePresenterProtocol {
+    return createMVPPresenter(baseView: baseView, baseRouter: baseRouter, baseInputParams: baseInputParams)
+  }
 }

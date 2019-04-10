@@ -14,7 +14,7 @@ struct ChannelCellData {
   var lastMessage: String
 }
 
-final class ChannelCell: UITableViewCell, NibLoadable {
+final class ChannelsCell: UITableViewCell, NibLoadable {
   @IBOutlet weak var roundedViewWithLetter: RoundedViewWithLetter!
   @IBOutlet weak var name: UILabel!
   @IBOutlet weak var lastPostMessage: UILabel!

@@ -8,14 +8,14 @@
 
 import Foundation
 import UIKit
-import SwiftyBeaver
+//import SwiftyBeaver
 
-let log = SwiftyBeaver.self
+//let log = SwiftyBeaver.self
 
 class LoggerAppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-    let console = ConsoleDestination()
-    log.addDestination(console)
+//    let console = ConsoleDestination()
+//    log.addDestination(console)
     return true
   }
 }

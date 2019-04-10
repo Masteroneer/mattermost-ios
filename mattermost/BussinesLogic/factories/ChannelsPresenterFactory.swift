@@ -18,4 +18,10 @@ final class ChannelsPresenterFactory: BasePresenterFactoryProtocol {
     presenter.postsService = Utils.shared.createService(serviceType: PostsService.self)
     return presenter
   }
+  
+  func createMockPresenter(baseView: BaseViewProtocol,
+                           baseRouter: BasePresenterRouterProtocol,
+                           baseInputParams: BaseInputParamsProtocol?) -> BasePresenterProtocol {
+    return ChannelsMockPresenter(baseView: baseView, baseRouter: baseRouter, inputParams: baseInputParams)
+  }
 }

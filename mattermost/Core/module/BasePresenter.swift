@@ -11,6 +11,7 @@ import Foundation
 protocol BasePresenterFactoryProtocol {
   init()
   func createMVPPresenter(baseView: BaseViewPresenterProtocol, baseRouter: BasePresenterRouterProtocol, baseInputParams: BaseInputParamsProtocol?) -> BasePresenterProtocol
+  func createMockPresenter(baseView: BaseViewProtocol, baseRouter: BasePresenterRouterProtocol, baseInputParams: BaseInputParamsProtocol?) -> BasePresenterProtocol
 }
 
 // Input params for module

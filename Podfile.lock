@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.8.1)
+  - Chatto (3.3.1)
   - RamblerAppDelegateProxy (0.0.5)
   - Realm (3.13.1):
     - Realm/Headers (= 3.13.1)
@@ -11,6 +12,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Chatto
   - RamblerAppDelegateProxy
   - RealmSwift
   - SnapKit
@@ -19,6 +21,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - Chatto
     - RamblerAppDelegateProxy
     - Realm
     - RealmSwift
@@ -27,12 +30,13 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  Chatto: 24a6c9b0c91b08130466888b8b61563b90191c6f
   RamblerAppDelegateProxy: 9e90d7bd1406865918538b4c720fa0977b848a1b
   Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
   RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
 
-PODFILE CHECKSUM: 5ec28d6a868b365591c95d1e763a1a411ca337cb
+PODFILE CHECKSUM: 70aff9496f61bcb798b7928719fc76fe9ca99b6e
 
-COCOAPODS: 1.6.0
+COCOAPODS: 1.6.1

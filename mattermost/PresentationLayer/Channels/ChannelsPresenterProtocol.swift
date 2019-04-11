@@ -10,4 +10,5 @@ import Foundation
 
 protocol ChannelsPresenterProtocol: BasePresenterProtocol {
   func onWillAppear()
+  func onSelect(channel: Channel)
 }

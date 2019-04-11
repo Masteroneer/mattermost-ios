@@ -14,6 +14,7 @@ enum ChannelType: Int {
 }
 
 struct Channel: Equatable {
+  var id: String
   var name: String
   var type: ChannelType
   var lastMessage: String
@@ -158,5 +159,9 @@ final class ChannelsViewController: BaseViewController, ChannelsViewProtocol, UI
     let view = ChannelsHeaderSection.loadFromNib()
     view.update(text: title)
     return view
+  }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    presenter?.onSelect(channel: getChannel(for: indexPath))
   }
 }

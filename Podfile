@@ -14,6 +14,7 @@ target 'mattermost' do
 
   # View
   pod 'SnapKit'
+  pod 'Chatto'
 
   pod 'RamblerAppDelegateProxy'
 end

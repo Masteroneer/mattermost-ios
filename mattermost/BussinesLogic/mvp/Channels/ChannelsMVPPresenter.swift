@@ -31,6 +31,10 @@ final class ChannelsMVPPresenter: BasePresenter, ChannelsPresenterProtocol {
     })
   }
   
+  func onSelect(channel: Channel) {
+    print(channel)
+  }
+  
   // MARK: - private methods
   
   private func onSuccess(teams: [TeamModel]) {
@@ -79,7 +83,7 @@ final class ChannelsMVPPresenter: BasePresenter, ChannelsPresenterProtocol {
       
       if let channelDisplayName = channel?.displayName,
         !channelDisplayName.isEmpty {
-        let displayChannel = Channel(name: channelDisplayName, type: .public, lastMessage: post.posts.first!.value.message)
+        let displayChannel = Channel(id: channel!.id, name: channelDisplayName, type: .public, lastMessage: post.posts.first!.value.message)
         displayChannels.append(displayChannel)
       }
     }

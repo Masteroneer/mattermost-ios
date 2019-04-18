@@ -10,11 +10,12 @@ target 'mattermost' do
   pod 'Starscream'
   
   # DB
-  pod 'RealmSwift'
+  # pod 'RealmSwift' temp remove
 
   # View
   pod 'SnapKit'
   pod 'Chatto'
+  pod 'ChattoAdditions'
 
   pod 'RamblerAppDelegateProxy'
 end

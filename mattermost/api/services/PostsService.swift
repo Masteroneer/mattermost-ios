@@ -8,17 +8,40 @@
 
 import Foundation
 
+enum Parameter {
+  case page(Int)
+  case perPage(Int)
+
+  func toString() -> (key: String, value: String) {
+    switch self {
+    case .page(let page):
+      return ("page", String(page))
+    case .perPage(let results):
+      return ("per_page", String(results))
+    }
+  }
+}
+
 protocol PostsServiceProtocol: BaseServiceProtocol {
-  func getPosts(for channelId: String, completion: @escaping (ApiResult<ChannelPostModel, ErrorModel>) -> Void)
+  func getPosts(for channelId: String,
+                with parameters: [Parameter],
+                completion: @escaping (ApiResult<ChannelPostModel, ErrorModel>) -> Void)
 }
 
 final class PostsService: BaseService, PostsServiceProtocol {  
   override var servicePathComponent: String { return "posts" }
   
-  func getPosts(for channelId: String, completion: @escaping (ApiResult<ChannelPostModel, ErrorModel>) -> Void) {
+  func getPosts(for channelId: String,
+                with parameters: [Parameter],
+                completion: @escaping (ApiResult<ChannelPostModel, ErrorModel>) -> Void) {
+    var strParameters: [String: String] = [:]
+    for parameter in parameters {
+      strParameters[parameter.toString().key] = parameter.toString().value
+    }
+    
     serializableAuthorizedRequest(methodPathComponent: "channels/\(channelId)/posts",
                                   method: .get,
-                                  parameters: ["per_page": "1"],
+                                  parameters: strParameters,
                                   completion: completion)
   }
 }

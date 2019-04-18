@@ -9,89 +9,91 @@
 import Foundation
 
 final class ChannelsMVPPresenter: BasePresenter, ChannelsPresenterProtocol {
-  private var view: ChannelsViewProtocol? { return baseView as? ChannelsViewProtocol }
-  
   var teamsService: TeamsServiceProtocol?
   var channelsService: ChannelsServiceProtocol?
   var postsService: PostsServiceProtocol?
 
   private var channels: [ChannelModel] = []
   private var posts: [ChannelPostModel] = []
+  private var view: ChannelsViewProtocol? { return baseView as? ChannelsViewProtocol }
+  private var router: ChannelsRouterProtocol? { return baseRouter as? ChannelsRouterProtocol }
   
   func onWillAppear() {
-    teamsService?.getMyTeams(completion: { [weak self] (result) in
-      guard let strongSelf = self else { return }
-      
-      switch result {
-        case .success(let teams):
-          strongSelf.onSuccess(teams: teams)
-        case .failure(let error):
-          print(error)
-      }
-    })
+    getMyTeams()
   }
   
   func onSelect(channel: Channel) {
-    print(channel)
+    router?.showChat(for: channel)
   }
   
   // MARK: - private methods
   
-  private func onSuccess(teams: [TeamModel]) {
-    channelsService?.getMyChannels(teamId: teams[0].id, completion: { [weak self] (result) in
+  private func getMyTeams() {
+    teamsService?.getMyTeams(completion: { [weak self] (result) in
       guard let strongSelf = self else { return }
       
       switch result {
-        case .success(let channels):
-          strongSelf.onSuccess(channels: channels)
-        case .failure(let error):
-          print(error)
-      }
-    })
-  }
-  
-  // Perfroms if GetPublicChannels return success result
-  private func onSuccess(channels: [ChannelModel]) {
-    self.channels = channels
-    
-    for channel in channels {
-      getPosts(for: channel.id)
-    }
-  }
-  
-  private func getPosts(for channelId: String) {
-    postsService?.getPosts(for: channelId, completion: { [weak self] (result) in
-      guard let strongSelf = self else { return }
-
-      switch result {
-      case .success(let posts):
-        strongSelf.posts.append(posts)
-        strongSelf.updateDisplayChannels()
+      case .success(let teams):
+        strongSelf.getMyChannels(for: teams.first!)
       case .failure(let error):
         print(error)
       }
     })
   }
   
-  private func updateDisplayChannels() {
-    var displayChannels = [Channel]()
-    
-    posts.forEach { (post) in
-      let channel = channels.first(where: { (channel) -> Bool in
-        return channel.id == post.posts.first?.value.channelId
-      })
+  private func getMyChannels(for team: TeamModel) {
+    channelsService?.getMyChannels(teamId: team.id, completion: { [weak self] (result) in
+      guard let strongSelf = self else { return }
       
-      if let channelDisplayName = channel?.displayName,
-        !channelDisplayName.isEmpty {
-        let displayChannel = Channel(id: channel!.id, name: channelDisplayName, type: .public, lastMessage: post.posts.first!.value.message)
-        displayChannels.append(displayChannel)
+      switch result {
+      case .success(let channels):
+        strongSelf.onSuccess(channels: channels)
+      case .failure(let error):
+        print(error)
       }
+    })
+  }
+  
+  private func onSuccess(channels: [ChannelModel]) {
+    self.channels = channels
+    
+    for channel in channels {
+      getFirstPost(for: channel)
     }
-    displayChannels.sort { (lChannelViewData, rChannelViewData) -> Bool in
-      return lChannelViewData.name < rChannelViewData.name
-    }
-    for channel in displayChannels {
-      view?.display(channel: channel)
+  }
+  
+  private func getFirstPost(for channel: ChannelModel) {
+    postsService?.getPosts(for: channel.id,
+                           with: [.perPage(1)],
+                           completion: { [weak self] (result) in
+      guard let strongSelf = self else { return }
+
+      switch result {
+      case .success(let posts):
+        strongSelf.posts.append(posts)
+        if let post = posts.posts.first?.value {
+          strongSelf.display(channel: channel, with: post)
+        }
+      case .failure(let error):
+        print(error)
+      }
+    })
+  }
+  
+  private func display(channel: ChannelModel, with post: PostModel) {
+    let channelType: ChannelType = getChannelType(from: channel.type)
+    let viewChannel = Channel(id: channel.id, name: channel.displayName, type: channelType, lastMessage: post.message)
+    view?.display(channel: viewChannel)
+  }
+  
+  private func getChannelType(from string: String) -> ChannelType {
+    switch string {
+    case "O":
+      return .public
+    case "P":
+      return .private
+    default:
+      return .directMessage
     }
   }
 }

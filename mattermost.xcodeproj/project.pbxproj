@@ -66,6 +66,16 @@
 		CEA8F06E22573CCB00881513 /* RoundedViewWithLetter.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA8F06D22573CCB00881513 /* RoundedViewWithLetter.xib */; };
 		CEA8F07022573CD900881513 /* RoundedViewWithLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8F06F22573CD900881513 /* RoundedViewWithLetter.swift */; };
 		CEF746A8224DF56700A40471 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF746A7224DF56700A40471 /* Team.swift */; };
+		DD03FAE62268475000A290DE /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD03FAE52268475000A290DE /* ChatViewController.xib */; };
+		DD052262226078C9002ED750 /* ChatPresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD052261226078C9002ED750 /* ChatPresenterFactory.swift */; };
+		DD052265226078FF002ED750 /* ChatMVPPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD052264226078FF002ED750 /* ChatMVPPresenter.swift */; };
+		DD0522672260791E002ED750 /* ChatMockPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0522662260791E002ED750 /* ChatMockPresenter.swift */; };
+		DD05226922607951002ED750 /* ChatPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD05226822607951002ED750 /* ChatPresenterProtocol.swift */; };
+		DD05226B226446E7002ED750 /* ChannelsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD05226A226446E7002ED750 /* ChannelsRouter.swift */; };
+		DD73D475225F19C00091CE90 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD73D474225F19C00091CE90 /* ChatViewController.swift */; };
+		DD73D477225F19D00091CE90 /* ChatAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD73D476225F19D00091CE90 /* ChatAssembler.swift */; };
+		DD73D47C225F2F3D0091CE90 /* ChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD73D47B225F2F3D0091CE90 /* ChatCell.xib */; };
+		DD73D47E225F2F580091CE90 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD73D47D225F2F580091CE90 /* ChatCell.swift */; };
 		DD972727225E075D003DF502 /* ChannelsMockPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD972726225E075D003DF502 /* ChannelsMockPresenter.swift */; };
 		DD972729225E173F003DF502 /* ChannelsHeaderSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD972728225E173F003DF502 /* ChannelsHeaderSection.xib */; };
 		DD97272B225E1753003DF502 /* ChannelsHeaderSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD97272A225E1753003DF502 /* ChannelsHeaderSection.swift */; };
@@ -137,6 +147,16 @@
 		CEA8F06D22573CCB00881513 /* RoundedViewWithLetter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoundedViewWithLetter.xib; sourceTree = "<group>"; };
 		CEA8F06F22573CD900881513 /* RoundedViewWithLetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedViewWithLetter.swift; sourceTree = "<group>"; };
 		CEF746A7224DF56700A40471 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		DD03FAE52268475000A290DE /* ChatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
+		DD052261226078C9002ED750 /* ChatPresenterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPresenterFactory.swift; sourceTree = "<group>"; };
+		DD052264226078FF002ED750 /* ChatMVPPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMVPPresenter.swift; sourceTree = "<group>"; };
+		DD0522662260791E002ED750 /* ChatMockPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMockPresenter.swift; sourceTree = "<group>"; };
+		DD05226822607951002ED750 /* ChatPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPresenterProtocol.swift; sourceTree = "<group>"; };
+		DD05226A226446E7002ED750 /* ChannelsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsRouter.swift; sourceTree = "<group>"; };
+		DD73D474225F19C00091CE90 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		DD73D476225F19D00091CE90 /* ChatAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAssembler.swift; sourceTree = "<group>"; };
+		DD73D47B225F2F3D0091CE90 /* ChatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatCell.xib; sourceTree = "<group>"; };
+		DD73D47D225F2F580091CE90 /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		DD972726225E075D003DF502 /* ChannelsMockPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsMockPresenter.swift; sourceTree = "<group>"; };
 		DD972728225E173F003DF502 /* ChannelsHeaderSection.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelsHeaderSection.xib; sourceTree = "<group>"; };
 		DD97272A225E1753003DF502 /* ChannelsHeaderSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsHeaderSection.swift; sourceTree = "<group>"; };
@@ -226,6 +246,7 @@
 		98B51AAC223B7AAE003325FA /* mvp */ = {
 			isa = PBXGroup;
 			children = (
+				DD052263226078EE002ED750 /* Chat */,
 				CE78410222533C24006E14DB /* Channels */,
 				980064C8223FEC150001B4DC /* Login */,
 				98B51AAD223B7AB8003325FA /* InputServer */,
@@ -244,6 +265,7 @@
 		98D20C7222378F1B0093E094 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				DD73D473225F19AB0091CE90 /* Chat */,
 				CE89658A224A14CC001D7B41 /* Channels */,
 				98FB420B2238DDC700569143 /* Login */,
 				98D20C7322378F450093E094 /* InputServer */,
@@ -270,6 +292,7 @@
 				98DC74252240BBEE0064EB38 /* InputServerPresenterFactory.swift */,
 				980064CB223FEC320001B4DC /* LoginPresenterFactory.swift */,
 				CE7840FE2253392E006E14DB /* ChannelsPresenterFactory.swift */,
+				DD052261226078C9002ED750 /* ChatPresenterFactory.swift */,
 			);
 			path = factories;
 			sourceTree = "<group>";
@@ -390,6 +413,7 @@
 				CE7840F82253338A006E14DB /* ChannelsViewController.xib */,
 				CE7840FA225333A6006E14DB /* ChannelsAssembler.swift */,
 				CE78410022533B0B006E14DB /* ChannelsPresenterProtocol.swift */,
+				DD05226A226446E7002ED750 /* ChannelsRouter.swift */,
 				DD97272C225E1937003DF502 /* ChannelsCell */,
 				DD97272D225E1945003DF502 /* ChannelsHeaderSection */,
 			);
@@ -425,10 +449,32 @@
 			path = RoundedViewWithLetter;
 			sourceTree = "<group>";
 		};
+		DD052263226078EE002ED750 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				DD052264226078FF002ED750 /* ChatMVPPresenter.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		DD73D473225F19AB0091CE90 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				DD73D474225F19C00091CE90 /* ChatViewController.swift */,
+				DD03FAE52268475000A290DE /* ChatViewController.xib */,
+				DD73D476225F19D00091CE90 /* ChatAssembler.swift */,
+				DD73D47B225F2F3D0091CE90 /* ChatCell.xib */,
+				DD73D47D225F2F580091CE90 /* ChatCell.swift */,
+				DD05226822607951002ED750 /* ChatPresenterProtocol.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
 		DD972725225E0743003DF502 /* mockPresenters */ = {
 			isa = PBXGroup;
 			children = (
 				DD972726225E075D003DF502 /* ChannelsMockPresenter.swift */,
+				DD0522662260791E002ED750 /* ChatMockPresenter.swift */,
 			);
 			path = mockPresenters;
 			sourceTree = "<group>";
@@ -528,7 +574,9 @@
 				98FB42062238D22D00569143 /* InputServerViewController.xib in Resources */,
 				CE7840F92253338B006E14DB /* ChannelsViewController.xib in Resources */,
 				98E8E66A221553EA00F13355 /* LaunchScreen.storyboard in Resources */,
+				DD73D47C225F2F3D0091CE90 /* ChatCell.xib in Resources */,
 				98E8E667221553EA00F13355 /* Assets.xcassets in Resources */,
+				DD03FAE62268475000A290DE /* ChatViewController.xib in Resources */,
 				CE7592562255E2F60069D786 /* ChannelsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -563,9 +611,8 @@
 				"${PODS_ROOT}/Target Support Files/Pods-mattermost/Pods-mattermost-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Chatto/Chatto.framework",
+				"${BUILT_PRODUCTS_DIR}/ChattoAdditions/ChattoAdditions.framework",
 				"${BUILT_PRODUCTS_DIR}/RamblerAppDelegateProxy/RamblerAppDelegateProxy.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 			);
@@ -573,9 +620,8 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Chatto.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChattoAdditions.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RamblerAppDelegateProxy.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 			);
@@ -596,11 +642,13 @@
 				CE896589224A0E6A001D7B41 /* Logger.swift in Sources */,
 				9860B825223F8FA900132666 /* UIViewController+TransitionHandler.swift in Sources */,
 				980064D0223FECF00001B4DC /* LoginTheme.swift in Sources */,
+				DD0522672260791E002ED750 /* ChatMockPresenter.swift in Sources */,
 				CEA8F0632257252E00881513 /* UICollectionView+Reusable.swift in Sources */,
 				CE8965872249FC73001D7B41 /* ApiResult.swift in Sources */,
 				98B51AB8223B7F51003325FA /* BasePresenter.swift in Sources */,
 				CE78410922534C3B006E14DB /* ChannelsService.swift in Sources */,
 				980064D4223FED940001B4DC /* LoginPresenterProtocol.swift in Sources */,
+				DD73D475225F19C00091CE90 /* ChatViewController.swift in Sources */,
 				9860B827223F8FB700132666 /* TransitionHandler.swift in Sources */,
 				980064CA223FEC240001B4DC /* LoginMVPPresenter.swift in Sources */,
 				CE7840FD225334DA006E14DB /* BaseThemeFactory.swift in Sources */,
@@ -609,6 +657,8 @@
 				CE78410B22534E27006E14DB /* Channel.swift in Sources */,
 				9860B822223F858400132666 /* BaseRouter.swift in Sources */,
 				98DC74262240BBEE0064EB38 /* InputServerPresenterFactory.swift in Sources */,
+				DD73D477225F19D00091CE90 /* ChatAssembler.swift in Sources */,
+				DD05226B226446E7002ED750 /* ChannelsRouter.swift in Sources */,
 				CE89007022423AA80009D970 /* StartScreenAppDelegate.swift in Sources */,
 				CE7840FB225333A6006E14DB /* ChannelsAssembler.swift in Sources */,
 				98D20C7522378F5D0093E094 /* InputServerViewController.swift in Sources */,
@@ -632,6 +682,8 @@
 				CE89658C224A196C001D7B41 /* TeamService.swift in Sources */,
 				CEA8F05D2257251700881513 /* NibLoadable.swift in Sources */,
 				CEF746A8224DF56700A40471 /* Team.swift in Sources */,
+				DD73D47E225F2F580091CE90 /* ChatCell.swift in Sources */,
+				DD052265226078FF002ED750 /* ChatMVPPresenter.swift in Sources */,
 				98B51AA7223B7886003325FA /* User.swift in Sources */,
 				CE7840F722533357006E14DB /* ChannelsViewController.swift in Sources */,
 				98FB420A2238D7C900569143 /* ServerUrlsService.swift in Sources */,
@@ -640,9 +692,11 @@
 				98B51AAA223B7A7E003325FA /* InputServerAssembler.swift in Sources */,
 				CE78410122533B0B006E14DB /* ChannelsPresenterProtocol.swift in Sources */,
 				DDDC531C22158BCF0032A9A3 /* BaseService.swift in Sources */,
+				DD05226922607951002ED750 /* ChatPresenterProtocol.swift in Sources */,
 				98B51AB1223B7B06003325FA /* InputServerPresenterProtocol.swift in Sources */,
 				98E8E660221553E700F13355 /* AppDelegate.swift in Sources */,
 				98DC742D2240BDF60064EB38 /* ApiServiceManager.swift in Sources */,
+				DD052262226078C9002ED750 /* ChatPresenterFactory.swift in Sources */,
 				980064C2223FE80E0001B4DC /* InputServerRouter.swift in Sources */,
 				980064D2223FED340001B4DC /* LoginRouter.swift in Sources */,
 				98B51AB4223B7F18003325FA /* BaseAssembler.swift in Sources */,

@@ -89,6 +89,9 @@ final class ChannelsViewController: BaseViewController, ChannelsViewProtocol, UI
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
+    channels.removeAll()
+    tableView.reloadData()
+    
     presenter?.onWillAppear()
   }
   

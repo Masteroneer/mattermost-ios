@@ -12,6 +12,7 @@ import Alamofire
 protocol UsersServiceProtocol: BaseServiceProtocol {
   func login(loginId: String, password: String, completion: @escaping (ApiResult<UserModel, ErrorModel>) -> Void)
   func getMe(completion: @escaping (ApiResult<UserModel, ErrorModel>) -> Void)
+  func getUsers(by ids: [String], completion: @escaping (ApiResult<[UserModel], ErrorModel>) -> Void)
 }
 
 final class UsersService: BaseService, UsersServiceProtocol {
@@ -49,5 +50,13 @@ final class UsersService: BaseService, UsersServiceProtocol {
                                        method: .get,
                                        parameters: nil,
                                        completion: completion)
+  }
+  
+  func getUsers(by ids: [String], completion: @escaping (ApiResult<[UserModel], ErrorModel>) -> Void) {
+    serializableAuthorizedRequest(methodPathComponent: "users/ids",
+                                  method: .post,
+                                  parameters: ["": ids],
+                                  encoding: JSONEncoding.default,
+                                  completion: completion)
   }
 }
